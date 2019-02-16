@@ -33,9 +33,9 @@ const Divider = styled.div`
     width: 15rem;
     margin: 3rem auto;
 `
-const ExpHT = ({ title, subtitle, text, srcimage }) => (
+const ExpHT = ({ title, subtitle, text, src }) => (
     <Fragment>
-        <ExpImage src={srcimage} />
+        <ExpImage src={src} />
         <ExpHead size='large' content={title} />
         <ExpSubHead content={subtitle} />
         <ExpText>{text}</ExpText >

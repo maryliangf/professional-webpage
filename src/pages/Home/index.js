@@ -2,123 +2,222 @@ import React, { Component } from 'react'
 import {
     Button,
     Container,
-    Divider,
     Grid,
     Header,
     Image,
     List,
-    Segment
+    Segment,
+    Icon
 } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 import ResponsiveContainer from '../../components/Container'
 import Heading from './Heading'
+import { Link } from 'react-router-dom'
+
+import MaryPic from '../../assets/IMG_4980.JPG'
+import PeachPic from '../../assets/Peach.jpg'
+import ContactPic from '../../assets/contact.jpg'
+
+const MyBellyButton = styled(Button)`
+  &&&&&& {
+      border: 2px solid black !important;
+  color: black !important;
+  }
+  &&&&&&:hover {
+    background: black !important;
+    color: white !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+`
 
 class HomepageLayout extends Component {
     render() {
         return (
             <ResponsiveContainer location={this.props.location}>
                 <Heading />
-                <Segment style={{ padding: '8em 0em' }} vertical>
-                    <Grid container stackable verticalAlign='middle'>
+                <Segment vertical
+                    style={{
+                        padding: '4rem 0',
+                        margin: '5rem 15rem',
+                        borderBottom: '0'
+                    }}>
+                    <Grid container stackable verticalAlign='center'
+                    >
                         <Grid.Row>
-                            <Grid.Column width={8}>
-                                <Header as='h3' style={{ fontSize: '2em' }}>
-                                    We Help Companies and Companions
-            </Header>
-                                <p style={{ fontSize: '1.33em' }}>
+                            <Grid.Column width={8} style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Header style={{ fontSize: '4em', fontWeight: '150', padding: '0 1.5rem' }}>
+                                    About
+                                </Header>
+                                <div
+                                    style={{
+                                        borderBottom: '2px solid black',
+                                        width: '4rem',
+                                        margin: '0 auto'
+                                    }}>
+                                </div>
+
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
                                     We can give your company superpowers to do things that they never thought possible.
                                     Let us delight your customers and empower your needs... through pure data analytics.
-            </p>
-                                <Header as='h3' style={{ fontSize: '2em' }}>
-                                    We Make Bananas That Can Dance
-            </Header>
-                                <p style={{ fontSize: '1.33em' }}>
-                                    Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-                                    bioengineered.
-            </p>
+                                </p>
+                                <Link to='/aboutme'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
+                                    MEET MARY
+                     </MyBellyButton></Link>
                             </Grid.Column>
-                            <Grid.Column floated='right' width={6}>
-                                <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+
+                            <Grid.Column floated='right' width={8}>
+                                <Image src={MaryPic}
+                                    style={{
+                                        height: '480px',
+                                        width: '480px',
+                                        objectFit: 'cover',
+                                        padding: '4rem 1.5rem 1.5rem 2rem'
+                                    }} />
                             </Grid.Column>
                         </Grid.Row>
+
+                    </Grid>
+                </Segment>
+
+                <Segment vertical style={{
+                    paddingBottom: '3rem',
+                    margin: '0 15rem',
+                    borderBottom: '0'
+                }}>
+                    <Grid container stackable verticalAlign='center'>
                         <Grid.Row>
-                            <Grid.Column textAlign='center'>
-                                <Button size='huge'>Check Them Out</Button>
+                            <Grid.Column floated='right' width={8}>
+                                <Image src={PeachPic}
+                                    style={{
+                                        height: '480px',
+                                        width: '480px',
+                                        objectFit: 'cover',
+                                        objectPosition: 'bottom center',
+                                        padding: '4rem 1.5rem 1.5rem 2rem'
+                                    }}
+                                />
+                            </Grid.Column>
+
+                            <Grid.Column width={8} style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Header style={{ fontSize: '4em', fontWeight: '150', padding: '0 1.5rem' }}>
+                                    Experience
+                                </Header>
+                                <div
+                                    style={{
+                                        borderBottom: '2px solid black',
+                                        width: '4rem',
+                                        margin: '0 auto'
+                                    }}>
+                                </div>
+
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
+                                    We can give your company superpowers to do things that they never thought possible.
+                                    Let us delight your customers and empower your needs... through pure data analytics.
+                                </p>
+                                <Link to='/experience'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
+                                    VIEW MY WORK
+                                    </MyBellyButton></Link>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
                 </Segment>
-                <Segment style={{ padding: '0em' }} vertical>
-                    <Grid celled='internally' columns='equal' stackable>
-                        <Grid.Row textAlign='center'>
-                            <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                                <Header as='h3' style={{ fontSize: '2em' }}>
-                                    "What a Company"
-            </Header>
-                                <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+
+
+                <Segment vertical
+                    style={{
+                        margin: '5rem 15rem',
+                        paddingBottom: '4rem',
+                        borderBottom: '0'
+                    }}>
+                    <Grid container stackable verticalAlign='center'>
+                        <Grid.Row>
+                            <Grid.Column width={8} style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <Header style={{ fontSize: '4em', fontWeight: '150', padding: '0 1.5rem' }}>
+                                    Get in touch
+                                </Header>
+                                <div
+                                    style={{
+                                        borderBottom: '2px solid black',
+                                        width: '4rem',
+                                        margin: '0 auto'
+                                    }}>
+                                </div>
+
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
+                                    We can give your company superpowers to do things that they never thought possible.
+                                    Let us delight your customers and empower your needs... through pure data analytics.
+                                </p>
+                                <Link to='/contact'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
+                                    CONTACT ME
+                     </MyBellyButton></Link>
                             </Grid.Column>
-                            <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                                <Header as='h3' style={{ fontSize: '2em' }}>
-                                    "I shouldn't have gone with their competitor."
-            </Header>
-                                <p style={{ fontSize: '1.33em' }}>
-                                    <Image avatar src='/images/avatar/large/nan.jpg' />
-                                    <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+
+                            <Grid.Column floated='right' width={8}>
+                                <Image src={ContactPic}
+                                    style={{
+                                        height: '480px',
+                                        width: '480px',
+                                        objectFit: 'cover',
+                                        padding: '4rem 1.5rem 1.5rem 2rem'
+                                    }} />
                             </Grid.Column>
                         </Grid.Row>
+
                     </Grid>
                 </Segment>
-                <Segment style={{ padding: '8em 0em' }} vertical>
-                    <Container text>
-                        <Header as='h3' style={{ fontSize: '2em' }}>
-                            Breaking The Grid, Grabs Your Attention
-        </Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                            Instead of focusing on content creation and hard work, we have learned how to master the
-                            art of doing nothing by providing massive amounts of whitespace and generic content that
-                            can seem massive, monolithic and worth your attention.
-        </p>
-                        <Button as='a' size='large'>
-                            Read More
-        </Button>
 
-                        <Divider
-                            as='h4'
-                            className='header'
-                            horizontal
-                            style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-                        >
-                            <a href='/'>Case Studies</a>
-                        </Divider>
 
-                        <Header as='h3' style={{ fontSize: '2em' }}>
-                            Did We Tell You About Our Bananas?
-        </Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                            Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-                            it's really true. It took years of gene splicing and combinatory DNA research, but our
-                            bananas can really dance.
-        </p>
-                        <Button as='a' size='large'>
-                            I'm Still Quite Interested
-        </Button>
-                    </Container>
-                </Segment>
-                <Segment inverted vertical style={{ padding: '5em 0em' }}>
-                    <Container>
-                        <Grid divided inverted stackable>
+                <Segment vertical style={{ paddingTop: '10rem', borderTop: '2px solid black', }}>
+                    <Container style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+
+                    }}>
+                        <Header>Check out what I'm up to!</Header>
+                        <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center' }}>
+                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+                                <i className="fab fa-instagram fa-lg"></i>
+                            </MyBellyButton>
+                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+                                <i className="fab fa-linkedin-in fa-lg"></i>
+                            </MyBellyButton>
+                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', width: '45px', height: '45px' }} >
+                                <i class="far fa-envelope fa-lg"></i>
+                            </MyBellyButton>
+                        </div>
+                        <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2019 - Mary Liang - All Rights Reserved</p>
+
+                        {/* <Grid divided stackable>
                             <Grid.Row>
-                                <Grid.Column width={3}>
-                                    <Header inverted as='h4' content='About' />
-                                    <List link inverted>
+                                <Grid.Column width={5}>
+                                    <Header inverted as='h4' content='Mary Liang' /> */}
+                        {/* <List link inverted>
                                         <List.Item as='a'>Sitemap</List.Item>
                                         <List.Item as='a'>Contact Us</List.Item>
                                         <List.Item as='a'>Religious Ceremonies</List.Item>
                                         <List.Item as='a'>Gazebo Plans</List.Item>
-                                    </List>
-                                </Grid.Column>
-                                <Grid.Column width={3}>
+                                    </List> */}
+                        {/* </Grid.Column> */}
+                        {/* <Grid.Column width={3}>
                                     <Header inverted as='h4' content='Services' />
                                     <List link inverted>
                                         <List.Item as='a'>Banana Pre-Order</List.Item>
@@ -126,17 +225,12 @@ class HomepageLayout extends Component {
                                         <List.Item as='a'>How To Access</List.Item>
                                         <List.Item as='a'>Favorite X-Men</List.Item>
                                     </List>
-                                </Grid.Column>
-                                <Grid.Column width={7}>
-                                    <Header as='h4' inverted>
-                                        Footer Header
-              </Header>
-                                    <p>
-                                        Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
+                                </Grid.Column> */}
+                        {/* <Grid.Column width={7}> */}
+
+                        {/* </Grid.Column> */}
+                        {/* </Grid.Row>
+                        </Grid> */}
                     </Container>
                 </Segment>
             </ResponsiveContainer>
