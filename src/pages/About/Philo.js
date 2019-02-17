@@ -18,16 +18,16 @@ const PhiloText = styled.div`
 `
 
 const PhiloHT = ({ children, title, text, left }) => (
-    <Fragment>
-        <PhiloHead left={left}>
-            {title}
-        </PhiloHead>
+  <Fragment>
+    <PhiloHead left={left ? 1 : 0}>
+      {title}
+    </PhiloHead>
 
-        <PhiloText left={left}>
-            {text}
-            {children && children}
-        </PhiloText >
-    </Fragment>
+    <PhiloText left={left ? 1 : 0}>
+      {text}
+      {children && children}
+    </PhiloText >
+  </Fragment>
 )
 
 export default PhiloHT
