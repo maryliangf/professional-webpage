@@ -31,7 +31,7 @@ const ExpText = styled.div`
 const Divider = styled.div`
     border-bottom: 2px solid black;
     width: 15rem;
-    margin: 3rem auto;
+    margin: 6rem auto;
 `
 const ExpHT = ({ title, subtitle, text, src }) => (
     <Fragment>
