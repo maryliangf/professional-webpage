@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import {
     Button,
-    Container,
     Grid,
     Header,
     Image,
-    List,
     Segment,
-    Icon
 } from 'semantic-ui-react'
 import styled from 'styled-components'
 
@@ -43,7 +40,7 @@ class HomepageLayout extends Component {
                         margin: '5rem 15rem',
                         borderBottom: '0'
                     }}>
-                    <Grid container stackable verticalAlign='center'
+                    <Grid container stackable verticalAlign='middle'
                     >
                         <Grid.Row>
                             <Grid.Column width={8} style={{
@@ -67,9 +64,11 @@ class HomepageLayout extends Component {
                                     We can give your company superpowers to do things that they never thought possible.
                                     Let us delight your customers and empower your needs... through pure data analytics.
                                 </p>
-                                <Link to='/aboutme'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
-                                    MEET MARY
-                     </MyBellyButton></Link>
+                                <Link to='/aboutme'>
+                                    <MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
+                                        MEET MARY
+                                    </MyBellyButton>
+                                </Link>
                             </Grid.Column>
 
                             <Grid.Column floated='right' width={8}>
@@ -91,7 +90,7 @@ class HomepageLayout extends Component {
                     margin: '0 15rem',
                     borderBottom: '0'
                 }}>
-                    <Grid container stackable verticalAlign='center'>
+                    <Grid container stackable verticalAlign='middle'>
                         <Grid.Row>
                             <Grid.Column floated='right' width={8}>
                                 <Image src={PeachPic}
@@ -141,7 +140,7 @@ class HomepageLayout extends Component {
                         paddingBottom: '4rem',
                         borderBottom: '0'
                     }}>
-                    <Grid container stackable verticalAlign='center'>
+                    <Grid container stackable verticalAlign='middle'>
                         <Grid.Row>
                             <Grid.Column width={8} style={{
                                 display: 'flex',
@@ -181,57 +180,6 @@ class HomepageLayout extends Component {
                         </Grid.Row>
 
                     </Grid>
-                </Segment>
-
-
-                <Segment vertical style={{ paddingTop: '10rem', borderTop: '2px solid black', }}>
-                    <Container style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-
-                    }}>
-                        <Header>Check out what I'm up to!</Header>
-                        <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center' }}>
-                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
-                                <i className="fab fa-instagram fa-lg"></i>
-                            </MyBellyButton>
-                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
-                                <i className="fab fa-linkedin-in fa-lg"></i>
-                            </MyBellyButton>
-                            <MyBellyButton basic color='white' style={{ borderRadius: '0', padding: '0.7rem', width: '45px', height: '45px' }} >
-                                <i class="far fa-envelope fa-lg"></i>
-                            </MyBellyButton>
-                        </div>
-                        <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2019 - Mary Liang - All Rights Reserved</p>
-
-                        {/* <Grid divided stackable>
-                            <Grid.Row>
-                                <Grid.Column width={5}>
-                                    <Header inverted as='h4' content='Mary Liang' /> */}
-                        {/* <List link inverted>
-                                        <List.Item as='a'>Sitemap</List.Item>
-                                        <List.Item as='a'>Contact Us</List.Item>
-                                        <List.Item as='a'>Religious Ceremonies</List.Item>
-                                        <List.Item as='a'>Gazebo Plans</List.Item>
-                                    </List> */}
-                        {/* </Grid.Column> */}
-                        {/* <Grid.Column width={3}>
-                                    <Header inverted as='h4' content='Services' />
-                                    <List link inverted>
-                                        <List.Item as='a'>Banana Pre-Order</List.Item>
-                                        <List.Item as='a'>DNA FAQ</List.Item>
-                                        <List.Item as='a'>How To Access</List.Item>
-                                        <List.Item as='a'>Favorite X-Men</List.Item>
-                                    </List>
-                                </Grid.Column> */}
-                        {/* <Grid.Column width={7}> */}
-
-                        {/* </Grid.Column> */}
-                        {/* </Grid.Row>
-                        </Grid> */}
-                    </Container>
                 </Segment>
             </ResponsiveContainer>
         )

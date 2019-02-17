@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Label, Form, Button, Message, Input } from 'semantic-ui-react'
+import { Label, Form, Button, Message } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Hero from '../../components/Hero'
@@ -94,6 +94,7 @@ class ContactPage extends Component {
                     <div
                         style={{
                             paddingTop: '2rem',
+                            paddingBottom: '5rem',
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: 'center',
