@@ -60,9 +60,8 @@ class HomepageLayout extends Component {
                                     }}>
                                 </div>
 
-                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
-                                    We can give your company superpowers to do things that they never thought possible.
-                                    Let us delight your customers and empower your needs... through pure data analytics.
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem', textAlign: 'center' }}>
+                                    Currently a dietetic intern at <br /> UCSF Medical Center
                                 </p>
                                 <Link to='/aboutme'>
                                     <MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
@@ -121,9 +120,8 @@ class HomepageLayout extends Component {
                                     }}>
                                 </div>
 
-                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
-                                    We can give your company superpowers to do things that they never thought possible.
-                                    Let us delight your customers and empower your needs... through pure data analytics.
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem', textAlign: 'center' }}>
+                                    Take a closer look into my past experiences and the skills I have developed along the way.
                                 </p>
                                 <Link to='/experience'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
                                     VIEW MY WORK
@@ -159,9 +157,10 @@ class HomepageLayout extends Component {
                                     }}>
                                 </div>
 
-                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem' }}>
-                                    We can give your company superpowers to do things that they never thought possible.
-                                    Let us delight your customers and empower your needs... through pure data analytics.
+                                <p style={{ fontSize: '1em', padding: '4rem 1.5rem 1.5rem 2rem', textAlign: 'center' }}>
+                                    Feel free to drop me a line.
+                                    <br />
+                                    I look forward to answering your e-mail!
                                 </p>
                                 <Link to='/contact'><MyBellyButton basic color='black' size='large' style={{ borderRadius: '0', fontSize: '14px' }}>
                                     CONTACT ME
@@ -181,7 +180,7 @@ class HomepageLayout extends Component {
 
                     </Grid>
                 </Segment>
-            </ResponsiveContainer>
+            </ResponsiveContainer >
         )
     }
 }

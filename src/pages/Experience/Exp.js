@@ -16,7 +16,7 @@ const ExpHead = styled(Header)`
 `
 
 const ExpSubHead = styled(Header.Subheader)`
-    padding: 0rem 5rem 1.5rem 2rem;
+    padding: 0rem 5rem ${props => props.subheadPadding || '1.5rem'} 2rem;
     text-align: center;
     font-family: 'Lato';
     font-size: 18px;
@@ -26,6 +26,9 @@ const ExpSubHead = styled(Header.Subheader)`
 const ExpText = styled.div`
     padding: 0 8rem;
     text-align: center;
+    b {
+        font-family: 'Lato'
+    }
 `
 
 const Divider = styled.div`
@@ -33,13 +36,13 @@ const Divider = styled.div`
     width: 15rem;
     margin: 6rem auto;
 `
-const ExpHT = ({ title, subtitle, text, src }) => (
+const ExpHT = ({ title, subtitle, text, src, noDiv, subheadPadding }) => (
     <Fragment>
-        <ExpImage src={src} />
-        <ExpHead size='large' content={title} />
-        <ExpSubHead content={subtitle} />
-        <ExpText>{text}</ExpText >
-        <Divider />
+        {src && <ExpImage src={src} />}
+        {title && <ExpHead size='large' content={title} />}
+        {subtitle && <ExpSubHead subheadPadding={subheadPadding} content={subtitle} />}
+        {text && <ExpText>{text}</ExpText >}
+        {!noDiv && <Divider />}
     </Fragment>
 )
 
