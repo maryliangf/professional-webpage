@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import Typed from 'react-typed'
 import { Label } from 'semantic-ui-react'
 
 import Hero from '../../components/Hero'
@@ -34,7 +34,6 @@ const HomepageHeading = ({ mobile }) => (
     <br></br>
     <Label color='black'
       as='h2'
-      content='Welcome to my career portfolio.'
       style={{
         fontFamily: '"Courier New", Courier, monospace',
         fontSize: mobile ? '1.3em' : '1.7em',
@@ -42,7 +41,12 @@ const HomepageHeading = ({ mobile }) => (
         marginBottom: '2rem',
         marginTop: mobile ? '0.5em' : '0.7em',
       }}
-    />
+    >
+      <Typed
+        strings={['Welcome to my career portfolio.']}
+        typeSpeed={110}
+      />
+    </Label>
   </Hero>
 )
 
