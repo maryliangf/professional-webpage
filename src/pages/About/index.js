@@ -18,12 +18,14 @@ class AboutPage extends Component {
     width: window.innerWidth
   }
 
+  updateWidth = () => this.setState({ width: window.innerWidth })
+
   componentDidMount() {
-    window.addEventListener('resize', () => this.setState({ width: window.innerWidth }))
+    window.addEventListener('resize', this.updateWidth)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', this.updateWidth)
   }
 
   render() {

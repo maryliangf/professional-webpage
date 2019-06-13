@@ -8,7 +8,7 @@ import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
 import ExperiencePage from './pages/Experience'
-// import ResumePage from './pages/Resume'
+import ResumePage from './pages/Resume'
 import ContactPage from './pages/Contact'
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/aboutme' component={AboutPage} />
           <Route exact path='/experience' component={ExperiencePage} />
-          <Route exact path='/resume' component={() => window.location = 'https://drive.google.com/open?id=1D8xn2ok1Bnu9Kzg7A5o5zD-m5sagFUdg'} />
+          <Route exact path='/resume' component={ResumePage} />
           <Route exact path='/contact' component={ContactPage} />
         </ScrollToTop>
       </Router>
