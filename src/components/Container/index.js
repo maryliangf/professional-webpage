@@ -55,13 +55,13 @@ const Footer = () => (
     }}>
       <Header>Check out what I'm up to!</Header>
       <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center' }}>
-        <MyBellyButton basic style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+        <MyBellyButton href='https://www.instagram.com/naturallyfoodie/' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
           <i className="fab fa-instagram fa-lg"></i>
         </MyBellyButton>
-        <MyBellyButton basic style={{ borderRadius: '0', padding: '0.7rem', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+        <MyBellyButton href='https://www.linkedin.com/in/maryliangf' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
           <i className="fab fa-linkedin-in fa-lg"></i>
         </MyBellyButton>
-        <MyBellyButton basic style={{ borderRadius: '0', padding: '0.7rem', width: '45px', height: '45px' }} >
+        <MyBellyButton href='mailto:maryliangf@gmail.com' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '45px', height: '45px' }} >
           <i className="far fa-envelope fa-lg"></i>
         </MyBellyButton>
       </div>
