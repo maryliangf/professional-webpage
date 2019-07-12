@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 
 import TopTop from '../../components/Container'
 import Hero from '../../components/Hero'
-import BGExperience from '../../assets/Fruitwhitegraybg.jpg'
+import BGExperience from '../../assets/BGExperience1.jpg'
 
 import UCSF from '../../assets/ucsf.jpg'
 import Spaulding from '../../assets/Spaulding.jpg'

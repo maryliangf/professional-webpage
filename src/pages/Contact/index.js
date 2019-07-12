@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Hero from '../../components/Hero'
 import TopTop from '../../components/Container'
-import BGContact from '../../assets/BGContact.jpg'
+import BGContact1 from '../../assets/BGContact1.png'
 
 const MyBellyButton = styled(Button)`
   border: 2px solid black !important;
@@ -22,7 +22,7 @@ class ContactPage extends Component {
     render() {
         return (
             <TopTop location={this.props.location}>
-                <Hero url={BGContact}>
+                <Hero url={BGContact1}>
 
                     <Label color='black'
                         as='h1'
