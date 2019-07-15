@@ -11,6 +11,7 @@ const StyledHeader = styled(Header)`
   font-size: 4em !important;
   font-weight: 150 !important;
   padding: 0 1.5rem !important;
+  text-align: center !important;
 `
 
 const Divider = styled.div`
