@@ -43,6 +43,7 @@ const ExpList = () => <div>
     <Exp
       subtitle="Other Achievements:"
       text={<ul style={{ textAlign: 'left' }}>
+        <li style={{ marginBottom: '0.8rem' }}>Delivered a <b>professional case study presentation</b> on the enteral nutrition management for patients in the intensive care unit (ICU) who are undergoing prone ventilation.</li>
         <li style={{ marginBottom: '0.8rem' }}>Delivered a <b>journal article review </b>presentation analyzing the available evidence regarding isolated functional fibers and reviews common misconceptions regarding fiber supplementation.</li>
         <li style={{ marginBottom: '0.8rem' }}>Designed <b>"Low Iodine Diet" </b>education material for patients in the inpatient and outpatient care settings.</li>
         <li style={{ marginBottom: '0.8rem' }}>Delivered a <b>story board </b>for Patient Food Services video, including script, frames, timings, and description of the shots.</li>

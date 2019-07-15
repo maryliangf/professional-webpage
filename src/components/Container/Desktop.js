@@ -64,6 +64,7 @@ class DesktopContainer extends Component {
                 <Link to='/'><ContainerButton active={this.props.location.pathname === '/' ? true : false}>HOME</ContainerButton> </Link>
                 <Link to='/aboutme'><ContainerButton active={this.props.location.pathname === '/aboutme' ? true : false}>ABOUT ME</ContainerButton></Link>
                 <Link to='/experience'><ContainerButton active={this.props.location.pathname === '/experience' ? true : false}>EXPERIENCE</ContainerButton></Link>
+                <Link to='/projects'><ContainerButton active={this.props.location.pathname === '/projects' ? true : false}>PROJECTS</ContainerButton></Link>
                 <Link to='/resume'><ContainerButton active={this.props.location.pathname === '/resume' ? true : false}>RESUME</ContainerButton></Link>
                 <Link to='/contact'><ContainerButton style={{ color: '#87ab36' }} active={this.props.location.pathname === '/contact' ? true : false}>CONTACT ME</ContainerButton></Link>
               </Container>
