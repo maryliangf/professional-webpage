@@ -5,7 +5,6 @@ import './index.css'
 import 'semantic-ui-css/semantic.min.css'
 
 import ScrollToTop from './components/ScrollToTop'
-
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
 import ExperiencePage from './pages/Experience'
