@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
 import {
   Container,
   Icon,
@@ -9,8 +7,32 @@ import {
   Segment,
   Sidebar
 } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import { getWidth } from './index'
+
+const ROUTES = [
+  {
+    to: '/',
+    label: 'Home'
+  },
+  {
+    to: '/aboutme',
+    label: 'About Me'
+  },
+  {
+    to: '/experience',
+    label: 'Experience'
+  },
+  {
+    to: '/resume',
+    label: 'Resumer'
+  },
+  {
+    to: '/contact',
+    label: 'Contact Me'
+  }
+]
 
 class MobileContainer extends Component {
   state = {}
@@ -37,17 +59,13 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as='a' href='/' active>Home</Menu.Item>
-          <Menu.Item as='a' href='/work'>Work</Menu.Item>
-          <Menu.Item as='a' href='/company'>Company</Menu.Item>
-          <Menu.Item as='a' href='/careers'>Careers</Menu.Item>
+          {ROUTES.map((route, index) => <Menu.Item key={index} active={this.props.location.pathname === route.to}><Link to={route.to}>{route.label}</Link></Menu.Item>)}
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 350, padding: '1em 0em' }}
             vertical
           >
             <Container>
@@ -55,19 +73,17 @@ class MobileContainer extends Component {
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name='sidebar' />
                 </Menu.Item>
+                <Menu.Item>
+                  Mary Liang
+                </Menu.Item>
               </Menu>
             </Container>
           </Segment>
-
           {children}
         </Sidebar.Pusher>
       </Responsive>
     )
   }
-}
-
-MobileContainer.propTypes = {
-  children: PropTypes.node,
 }
 
 export default MobileContainer

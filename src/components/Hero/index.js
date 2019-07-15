@@ -1,27 +1,25 @@
 import React from 'react'
-import { Container } from 'semantic-ui-react'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  background: ${props => props.url && `url(${props.url})`};
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3rem;
+  height: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
 
 const Hero = ({ children, url }) => (
-    <Container
-        textAlign='center'
-        fluid
-        style={{
-            background: `url(${url})`,
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            padding: '3rem',
-            height: '600px',
-            boxSizing: 'border-box',
-
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}
-    >
-        {children}
-    </Container>
+  <Container url={url}>
+    {children}
+  </Container>
 )
 
 export default Hero

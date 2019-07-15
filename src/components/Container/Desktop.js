@@ -70,7 +70,6 @@ class DesktopContainer extends Component {
             </Menu>
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     )

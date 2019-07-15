@@ -14,7 +14,7 @@ import MobileContainer from './Mobile'
 const ResponsiveContainer = ({ children, location }) => (
   <div>
     <DesktopContainer location={location}>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
+    <MobileContainer location={location}>{children}</MobileContainer>
     <Footer />
   </div>
 )
@@ -31,10 +31,16 @@ export const getWidth = () => {
 }
 
 
-const MyBellyButton = styled(Button)`
+const StyledButton = styled(Button)`
   &&&&&& {
-      border: 2px solid black !important;
-  color: black !important;
+    border: 2px solid black !important;
+    color: black !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > * {
+    margin: 0;
   }
   &&&&&&:hover {
     background: black !important;
@@ -55,15 +61,15 @@ const Footer = () => (
     }}>
       <Header>Check out what I'm up to!</Header>
       <div style={{ marginTop: '2rem', display: 'flex', alignItems: 'center' }}>
-        <MyBellyButton href='https://www.instagram.com/naturallyfoodie/' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+        <StyledButton href='https://www.instagram.com/naturallyfoodie/' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
           <i className="fab fa-instagram fa-lg"></i>
-        </MyBellyButton>
-        <MyBellyButton href='https://www.linkedin.com/in/maryliangf' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
+        </StyledButton>
+        <StyledButton href='https://www.linkedin.com/in/maryliangf' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '0.7rem', width: '45px', height: '45px' }} >
           <i className="fab fa-linkedin-in fa-lg"></i>
-        </MyBellyButton>
-        <MyBellyButton href='mailto:maryliangf@gmail.com' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '45px', height: '45px' }} >
+        </StyledButton>
+        <StyledButton href='mailto:maryliangf@gmail.com' target='_blank' basic style={{ borderRadius: '0', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '45px', height: '45px' }} >
           <i className="far fa-envelope fa-lg"></i>
-        </MyBellyButton>
+        </StyledButton>
       </div>
       <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2019 - Mary Liang - All Rights Reserved</p>
     </Container>
