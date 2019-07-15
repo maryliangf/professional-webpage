@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Container from '../../components/Container'
