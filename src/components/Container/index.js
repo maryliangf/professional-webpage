@@ -13,9 +13,14 @@ import MobileContainer from './Mobile'
 
 const ResponsiveContainer = ({ children, location }) => (
   <div>
-    <DesktopContainer location={location}>{children}</DesktopContainer>
-    <MobileContainer location={location}>{children}</MobileContainer>
-    <Footer />
+    <DesktopContainer location={location}>
+      {children}
+      <Footer />
+    </DesktopContainer>
+    <MobileContainer location={location}>
+      {children}
+      <Footer />
+    </MobileContainer>
   </div>
 )
 
