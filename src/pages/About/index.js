@@ -32,14 +32,16 @@ class AboutPage extends Component {
     return (
       <Container location={this.props.location}>
         <Hero />
-        <div style={{ maxWidth: '1440px', margin: '0 4rem' }}>
-          <Grid stackable>
-            <MeetRow />
-            <Divider />
-            <WorkRow />
-            <Divider />
-            <GoalsRow />
-          </Grid>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ maxWidth: '1440px', margin: '0 4rem' }}>
+            <Grid stackable>
+              <MeetRow />
+              <Divider />
+              <WorkRow />
+              <Divider />
+              <GoalsRow />
+            </Grid>
+          </div>
         </div>
       </Container >
     )
