@@ -20,7 +20,7 @@ const ProjectsPage = ({ location }) => (
   <Container location={location}>
     <Hero />
     <Column>
-      <div style={{ width: '100%', maxWidth: '800px' }}>
+      <div style={{ width: '100%', maxWidth: '800px', padding: '0 1rem' }}>
         <Prone />
       </div>
     </Column>
