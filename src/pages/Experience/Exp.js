@@ -18,16 +18,12 @@ const ExpHead = styled(Header)`
 const ExpSubHead = styled(Header.Subheader)`
   margin: 1rem 0 !important;
   text-align: ${props => !props.title && 'center'};
-  font-family: 'Lato';
   font-size: 18px;
   font-weight: 900;
 `
 
 const ExpText = styled.div`
   text-align: center;
-  b {
-      font-family: 'Lato'
-  }
 `
 
 const Divider = styled.div`

@@ -7,7 +7,6 @@ import Project from './Project'
 const SectionHeader = styled(Header)`
   font-size: 2rem !important;
   font-weight: normal !important;
-  font-family: 'Nunito Sans', sans-serif !important;
   text-align: center;
 `
 
@@ -28,6 +27,12 @@ const SectionContainer = styled.div`
 const P = styled.p`
   font-size: 1.1rem !important;
   text-align: ${props => props.align === 'center' ? 'center' : props.align === 'right' ? 'right' : props.align === 'justify' ? 'justify' : 'left'};
+`
+
+const Divider = styled.div`
+  border-bottom: 2px solid black;
+  width: 15rem;
+  margin: 6rem auto;
 `
 
 export const Prone = () => (
@@ -53,5 +58,6 @@ export const Prone = () => (
     <SectionContainer>
       <P>Lorem Ipsum</P>
     </SectionContainer>
+    <Divider />
   </>
 )

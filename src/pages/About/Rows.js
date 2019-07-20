@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import MaryPic from '../../assets/IMG_4980.JPG'
 
 const StyledHeader = styled(Header)`
-  font-family: ${props => !props.list && 'Montserrat, sans-serif !important'};
   letter-spacing: 0.3rem !important;
   margin: ${props => props.list && '0 auto !important'};
   margin-bottom: ${props => props.list ? '1rem !important' : '3rem !important'};
@@ -13,7 +12,6 @@ const StyledHeader = styled(Header)`
 `
 
 const P = styled.p`
-  font-family: 'Lato', sans-serif;
   font-size: 1em;
   text-align: ${props => props.align === 'center' ? 'center' : props.align === 'right' ? 'right' : props.align === 'justify' ? 'justify' : 'left'};
 `
