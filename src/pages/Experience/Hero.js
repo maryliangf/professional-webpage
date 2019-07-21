@@ -1,33 +1,16 @@
 import React from 'react'
-import { Label } from 'semantic-ui-react'
 
 import BGExperience from '../../assets/BGExperience1.jpg'
-import Hero from '../../components/Hero'
+import Hero, { HeroText } from '../../components/Hero'
 
 const HeroComponent = () => <Hero url={BGExperience}>
-  <Label color='black'
+  <HeroText
     as='h1'
-    content="Mary Liang"
-    style={{
-      fontFamily: '"Courier New", Courier, monospace',
-      fontSize: '1.5em',
-      fontWeight: '100',
-      marginBottom: 0,
-      marginTop: '0',
-    }}
-  />
-  <br />
-  <Label color='black'
+  >Mary Liang</HeroText>
+  <br></br>
+  <HeroText
     as='h1'
-    content="EXPERIENCE"
-    style={{
-      fontFamily: '"Courier New", Courier, monospace',
-      fontSize: '1.5em',
-      fontWeight: 'normal',
-      marginBottom: 0,
-      marginTop: '0.7em',
-    }}
-  />
+  >EXPERIENCE</HeroText>
 </Hero>
 
 export default HeroComponent

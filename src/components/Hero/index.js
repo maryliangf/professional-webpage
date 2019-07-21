@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import HeroText from './HeroText'
+
 const Container = styled.div`
   background: ${props => props.url && `url(${props.url})`};
   background-position: center center;
@@ -22,5 +24,6 @@ const Hero = ({ children, url }) => (
   </Container>
 )
 
+export { HeroText }
 export default Hero
 

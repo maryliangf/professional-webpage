@@ -1,33 +1,16 @@
 import React from 'react'
-import { Label } from 'semantic-ui-react'
 
-import Hero from '../../components/Hero'
+import Hero, { HeroText } from '../../components/Hero'
 import BGContact1 from '../../assets/BGContact1.png'
 
 const HeroComponent = () => <Hero url={BGContact1}>
-  <Label color='black'
+  <HeroText
     as='h1'
-    content="Mary Liang"
-    style={{
-      fontFamily: '"Courier New", Courier, monospace',
-      fontSize: '1.5em',
-      fontWeight: '100',
-      marginBottom: 0,
-      marginTop: '0',
-    }}
-  />
+  >Mary Liang</HeroText>
   <br></br>
-  <Label color='black'
+  <HeroText
     as='h1'
-    content="CONTACT ME"
-    style={{
-      fontFamily: '"Courier New", Courier, monospace',
-      fontSize: '1.5em',
-      fontWeight: 'normal',
-      marginBottom: 0,
-      marginTop: '0.7em',
-    }}
-  />
+  >CONTACT ME</HeroText>
 </Hero>
 
 export default HeroComponent
