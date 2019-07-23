@@ -25,6 +25,10 @@ const ROUTES = [
     label: 'Experience'
   },
   {
+    to: '/projects',
+    label: 'Projects'
+  },
+  {
     to: '/resume',
     label: 'Resumer'
   },
