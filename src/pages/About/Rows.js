@@ -9,6 +9,11 @@ const StyledHeader = styled(Header)`
   margin: ${props => props.list && '0 auto !important'};
   margin-bottom: ${props => props.list ? '1rem !important' : '3rem !important'};
   text-decoration-line: ${props => props.list && 'underline'};
+  width: 100%;
+  text-align: ${props => props.left ? 'left' : 'center'};
+  @media (max-width: 425px) {
+    text-align: center;
+  }
 `
 
 const P = styled.p`
@@ -23,57 +28,64 @@ const Center = styled.div`
   flex-flow: ${props => props.row ? 'row nowrap' : 'column nowrap'};
   justify-content: ${props => props.justify === 'start' ? 'flex-start' : props.justify === 'end' ? 'flex-end' : 'center'};
   align-items: ${props => props.align === 'start' ? 'flex-start' : props.align === 'end' ? 'flex-end' : 'center'};
-  padding: ${props => props.padding && props.lean ? '0 3rem' : props.padding && !props.lean ? '6rem 3rem' : props.lean ? '0' : '6rem 0'};
+  padding: ${props => props.padding && props.lean ? '0 3rem' : props.padding && !props.lean ? '3rem 3rem' : props.lean ? '0' : '3rem 0'};
+  @media (max-width: 425px) {
+    padding: ${props => props.mobile && '0'};
+  }
 `
 
-const Column = ({ children, justify, align, row, lean, padding, ...props }) => <Grid.Column {...props}>
-  <Center justify={justify} align={align} row={row} lean={lean} padding={padding}>
+const Column = ({ children, justify, align, row, lean, padding, mobile, ...props }) => <Grid.Column {...props}>
+  <Center justify={justify} align={align} row={row} lean={lean} padding={padding} mobile={mobile}>
     {children}
   </Center>
 </Grid.Column>
 
 const MeetRow = () => <Grid.Row columns={2}>
-  <Column width={7} justify='start'>
+  <Column width={7} justify='start' mobile>
     <Image src={MaryPic} rounded size='medium' style={{ width: '300px', height: '300px', objectFit: 'cover' }} />
   </Column>
   <Column justify='start' align='start' width={9}>
-    <StyledHeader>MEET MARY</StyledHeader>
+    <StyledHeader left>MEET MARY</StyledHeader>
     <P>Hi and welcome to my page!</P>
-    <P>My name is <b>Mary</b> and I am currently a dietetic intern at University of California, San Francisco Medical Center (UCSF).</P>
+    <P>My name is <b>Mary</b> and I am currently a dietetic intern at University of California, San Francisco Medical Center. I earned my BS degree in Nutritional Sciences, Dietetics from <b>Boston University</b>. </P>
     <P>Though I was born and raised in the <b>Dominican Republic</b>, my parents are immigrants from <b>China</b>. I then moved to the <b>United States</b> to complete my undergraduate degree in <b>Boston, MA</b> and am currently based in <b>San Francisco, CA</b>.</P>
-    <P>I am very passionate about helping others become healthier versions of themselves, especially to prevent chronic diseases through evidence-based medical nutrition therapy. My upbringing in a family that values health and watching my own mother struggle with genetic nutritional conditions have shaped my love for nutrition. As a dietetic intern, I hope to become a <b>Registered Dietitian</b> and an expert at providing medical nutrition therapy for a wide demographics that encompasses diverse cultures, ethnicities, and socioeconomic backgrounds.</P>
-    <P>I also enjoy cooking, traveling, doing yoga, being outdoors, and learning coding.</P>
+    <P>I am very passionate about helping others become healthier versions of themselves through evidence-based medical nutrition therapy. My upbringing in a family that values health and watching my own mother struggle with genetic nutritional conditions have shaped my love for nutrition. With my diverse background and rigorous training, I hope to become a <b>Registered Dietitian</b> who brings <i>a unique approach to nutrition, wellness, and health</i>.</P>
+    <P>In addition to my love for health promotion via nutrition and fitness, I also enjoy photography and fashion, as well as traveling, doing yoga, and learning to code.</P>
   </Column>
 </Grid.Row >
 
 const WorkRow = () => <Grid.Row centered>
   <Column width={10}>
     <StyledHeader>MY WORK PHILOSOPHY</StyledHeader>
-    <P align='justify'>I firmly believe in <b>disease prevention and management through nutrition</b>. This is why I want to make a long-lasting difference in the field of dietetics by helping people improve health outcomes by providing <b>medical nutrition therapy through evidence-based practice</b>. I am also passionate about providing this type of therapy to a wide breathe of demographics that includes a variety of cultures, ethnicities, and socioeconomic backgrounds.</P>
-    <P align='justify'>I am <b>focused, driven, and detail-oriented</b>, which are qualities that serve me well in clinical practice as an RD-to-be. I easily feel sympathy with others and am committed in actively helping others while they seek help, or at least offer my help.</P>
+    <P align='justify'>I firmly believe in <b>health optimization through nutrition</b>. This is why I want to make a long-lasting difference in my field by helping people improve health outcomes by providing medical nutrition therapy through evidence-based practice. I am also passionate about being able to reach to a wide breadth of demographics that include a variety of cultures, ethnicities, and socioeconomic backgrounds.</P>
     <P align='justify'>I recognize that there is not one glove that fits all and believe that <b>individualization </b>is key to a well-rounded approach to a solution, whether it is for a workshop, a project, or nutrition interventions.</P>
-    <P align='justify'>As a current dietetic intern and a human-being in the world, I recognize that there is always room for improvement and thus always try to look for ways in which I can grow and better myself. I believe that there is always something good that comes from failure and also believe in the importance of learning from past experiences and thus am always <b>open for feedback</b>.</P>
-    <P align='justify'>I have seen, from my prior and current experiences, that <b>hard work</b> is key to success and always strive in putting all my dedication, thoroughness, and thought in whatever I am working on.</P>
   </Column>
 </Grid.Row >
 
-const GoalsRow = () => <Grid.Row centered style={{ padding: '6rem 0' }}>
+const GoalsRow = () => <Grid.Row centered style={{ padding: '3rem 0' }}>
   <Column width={16} lean>
-    <StyledHeader>MY CAREER GOALS</StyledHeader>
+    <StyledHeader>MY SKILL SET</StyledHeader>
   </Column>
-  <Column width={7} lean justify='start' align='start' padding>
-    <StyledHeader as='h5' list>SHORT TERM</StyledHeader>
-    <P>Practice medical nutrition therapy as an evidence-based practice for a wide demographic through meaningful, empathetic patient care in the inpatient setting </P>
-    <P>Successfully complete my dietetic internship at UCSF Medical Center</P>
-    <P>Obtain my Registered Dietitian (RD) certification</P>
-    <P>Work as a per diem inpatient clinical dietitian at UCSF Medical Center</P>
+  <Column width={7} lean justify='start' align='center' padding>
+    <StyledHeader as='h5' list>MY COMPETENCIES</StyledHeader>
+    <P align='center'>Medical Nutrition Therapy </P>
+    <P align='center'>Nutrition Education and Counseling </P>
+    <P align='center'>Foodservice Systems Management Principles</P>
+    <P align='center'>Recipe Analysis and Development</P>
+    <P align='center'>Menu Review and Analysis</P>
+    <P align='center'>Project Management and Execution</P>
+    <P align='center'>Data Analysis and Presentation</P>
+    <P align='center'>Public Speaking</P>
+    <P align='center'>Spanish Verbal and Written Translation </P>
   </Column>
-  <Column width={7} lean justify='start' align='start' padding>
-    <StyledHeader as='h5' list>LONG TERM</StyledHeader>
-    <P>Attain a Masters in Science for Nutrition</P>
-    <P>Obtain specialized certification as a Certified Nutrition Support Clinician</P>
-    <P>Make a difference helping patients improve health outcomes by providing exceptional care and education with medical nutrition therapy and evidenced-based practice at a teaching hospital</P>
-    <P>Continue evidence-based practice throughout my career through clinical practice and staying current on research</P>
+  <Column width={7} lean justify='start' align='center' padding>
+    <StyledHeader as='h5' list>MY QUALITIES</StyledHeader>
+    <P align='center'>Highly focused, disciplined, and motivated self-starter</P>
+    <P align='center'>Effective and active listener with excellent written and verbal communication skills</P>
+    <P align='center'>Proactive and detail-oriented problem-solver with strategic, independent, and critical thinking</P>
+    <P align='center'>Genuinely dependable and committed to personal and team growth through hard work and team collaboration</P>
+    <P align='center'>Adapt flexibly to new situations and environments, as well as shifting priorities</P>
+    <P align='center'>Always happy and open to learn new things</P>
   </Column>
 </Grid.Row >
 

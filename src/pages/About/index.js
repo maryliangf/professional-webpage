@@ -33,7 +33,7 @@ class AboutPage extends Component {
       <Container location={this.props.location}>
         <Hero />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '1440px', margin: '0 4rem' }}>
+          <div style={{ maxWidth: '1440px', margin: '3rem 4rem' }}>
             <Grid stackable>
               <MeetRow />
               <Divider />
