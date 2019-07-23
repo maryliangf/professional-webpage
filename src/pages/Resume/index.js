@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 
 const ResumePage = () => {
-    window.open('https://drive.google.com/open?id=1ea9Abgl_VtmV4gTzWeiw6qwRGI2fNWz0', '_blank')
+    window.open('https://drive.google.com/open?id=1h4CP99yd_KvwWpfK1IEM4dTt7U4II3bQ', '_blank')
     return <Redirect to='/' />
 }
 
