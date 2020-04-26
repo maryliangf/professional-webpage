@@ -61,7 +61,7 @@ const AboutRow = () => <Grid.Row columns={2}>
   <Column>
     <StyledHeader>About</StyledHeader>
     <Divider />
-    <P>Currently a dietetic intern at <br /> UCSF Medical Center</P>
+    <P>Currently a Registered Dietitian in <br /> San Francisco</P>
     <Link to='/aboutme'>
       <StyledButton basic color='black' size='large'>MEET MARY</StyledButton>
     </Link>
