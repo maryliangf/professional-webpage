@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import HeroText from './HeroText'
 
 const Container = styled.div`
-  background: ${props => props.url && `url(${props.url})`};
+  background: ${(props) => props.url && `url(${props.url})`};
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,12 +18,7 @@ const Container = styled.div`
   text-align: center;
 `
 
-const Hero = ({ children, url }) => (
-  <Container url={url}>
-    {children}
-  </Container>
-)
+const Hero = ({ children, url }) => <Container url={url}>{children}</Container>
 
 export { HeroText }
 export default Hero
-

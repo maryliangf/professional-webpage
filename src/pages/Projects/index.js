@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Container from '../../components/Container'
-
 import Hero from './Hero'
 import { Prone } from './ProjectList'
 
@@ -24,8 +23,7 @@ const ProjectsPage = ({ location }) => (
         <Prone />
       </div>
     </Column>
-  </Container >
+  </Container>
 )
-
 
 export default ProjectsPage

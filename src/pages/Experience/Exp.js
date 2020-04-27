@@ -17,7 +17,7 @@ const ExpHead = styled(Header)`
 
 const ExpSubHead = styled(Header.Subheader)`
   margin: 1rem 0 !important;
-  text-align: ${props => !props.title && 'center'};
+  text-align: ${(props) => !props.title && 'center'};
   font-size: 18px;
   font-weight: 900;
 `
@@ -27,23 +27,18 @@ const ExpText = styled.div`
 `
 
 const Divider = styled.div`
-    border-bottom: 2px solid black;
-    width: 15rem;
-    margin: 6rem auto;
+  border-bottom: 2px solid black;
+  width: 15rem;
+  margin: 6rem auto;
 `
 const ExpHT = ({ title, subtitle, text, src, noDiv, subheadPadding }) => (
   <>
     {src && <ExpImage src={src} />}
-    {title && <ExpHead size='large' content={title} />}
+    {title && <ExpHead size="large" content={title} />}
     {subtitle && <ExpSubHead title={!title} subheadPadding={subheadPadding} content={subtitle} />}
-    {text && <ExpText>{text}</ExpText >}
+    {text && <ExpText>{text}</ExpText>}
     {!noDiv && <Divider />}
   </>
 )
 
-
 export default ExpHT
-
-
-
-

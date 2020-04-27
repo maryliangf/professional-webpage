@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Container from '../../components/Container'
-
 import Hero from './Hero'
-import { MeetRow, WorkRow, GoalsRow } from './Rows'
+import { GoalsRow, MeetRow, WorkRow } from './Rows'
 
 const Divider = styled.div`
   border-bottom: 2px solid black;
@@ -13,39 +12,36 @@ const Divider = styled.div`
   margin: 0 auto;
 `
 
-class AboutPage extends Component {
-  state = {
-    width: window.innerWidth
-  }
+const AboutPage = ({ location }) => {
+  const [, setState] = useState({
+    width: window.innerWidth,
+  })
 
-  updateWidth = () => this.setState({ width: window.innerWidth })
+  const updateWidth = () => setState({ width: window.innerWidth })
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateWidth)
-  }
+  useEffect(() => {
+    window.addEventListener('resize', updateWidth)
+    return () => {
+      window.removeEventListener('resize', updateWidth)
+    }
+  }, [])
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWidth)
-  }
-
-  render() {
-    return (
-      <Container location={this.props.location}>
-        <Hero />
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '1440px', margin: '3rem 4rem' }}>
-            <Grid stackable>
-              <MeetRow />
-              <Divider />
-              <WorkRow />
-              <Divider />
-              <GoalsRow />
-            </Grid>
-          </div>
+  return (
+    <Container location={location}>
+      <Hero />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '1440px', margin: '3rem 4rem' }}>
+          <Grid stackable>
+            <MeetRow />
+            <Divider />
+            <WorkRow />
+            <Divider />
+            <GoalsRow />
+          </Grid>
         </div>
-      </Container >
-    )
-  }
+      </div>
+    </Container>
+  )
 }
 
 export default AboutPage

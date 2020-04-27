@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const HeroText = styled.p`
-  font-family: "Courier New", Courier, monospace !important;
+  font-family: 'Courier New', Courier, monospace !important;
   font-size: 1.5em;
   font-weight: 100;
   margin-bottom: 0;

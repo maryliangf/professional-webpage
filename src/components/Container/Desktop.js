@@ -1,18 +1,10 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Container, Header, Menu, Responsive, Segment, Visibility } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import {
-  Container,
-  Menu,
-  Responsive,
-  Segment,
-  Visibility,
-  Header
-} from 'semantic-ui-react'
-
 import { getWidth } from './index'
-import { Link } from 'react-router-dom'
 
 const ContainerButton = styled(Menu.Item)`
   &&&&&&:hover {
@@ -20,61 +12,64 @@ const ContainerButton = styled(Menu.Item)`
   }
 `
 
-class DesktopContainer extends Component {
-  state = {}
+const DesktopContainer = ({ location, children }) => {
+  const [fixed, setFixed] = useState(false)
 
-  hideFixedMenu = () => this.setState({ fixed: false })
-  showFixedMenu = () => this.setState({ fixed: true })
+  const hideFixedMenu = () => setFixed(false)
+  const showFixedMenu = () => setFixed(true)
 
-  render() {
-    const { children } = this.props
-    const { fixed } = this.state
-
-    return (
-      <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-        >
-          <Segment
-            textAlign='center'
-            style={{ padding: '0em 0em' }}
-            vertical
-          >
-            <Container>
-              <Header
-                as='h1'
-                content='MARY LIANG'
-                style={{
-                  fontSize: '3em',
-                  fontWeight: '300',
-                  marginBottom: 0,
-                  paddingTop: '1em',
-                }}
-              />
-            </Container>
-            <Menu
-              fixed={fixed ? 'top' : null}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
+  return (
+    <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+      <Visibility once={false} onBottomPassed={showFixedMenu} onBottomPassedReverse={hideFixedMenu}>
+        <Segment textAlign="center" style={{ padding: '0em 0em' }} vertical>
+          <Container>
+            <Header
+              as="h1"
+              content="MARY LIANG"
+              style={{
+                fontSize: '3em',
+                fontWeight: '300',
+                marginBottom: 0,
+                paddingTop: '1em',
+              }}
+            />
+          </Container>
+          <Menu fixed={fixed ? 'top' : null} pointing={!fixed} secondary={!fixed} size="large">
+            <Container
+              fluid={false}
+              textAlign="center"
+              text={false}
+              style={{ width: 'auto', fontFamily: "'Lato' !important" }}
             >
-              <Container fluid={false} textAlign='center' text={false} style={{ width: 'auto', fontFamily: "'Lato' !important" }}>
-                <Link to='/'><ContainerButton active={this.props.location.pathname === '/' ? true : false}>HOME</ContainerButton> </Link>
-                <Link to='/aboutme'><ContainerButton active={this.props.location.pathname === '/aboutme' ? true : false}>ABOUT ME</ContainerButton></Link>
-                <Link to='/experience'><ContainerButton active={this.props.location.pathname === '/experience' ? true : false}>EXPERIENCE</ContainerButton></Link>
-                <Link to='/projects'><ContainerButton active={this.props.location.pathname === '/projects' ? true : false}>PROJECTS</ContainerButton></Link>
-                <Link to='/resume'><ContainerButton active={this.props.location.pathname === '/resume' ? true : false}>RESUME</ContainerButton></Link>
-                <Link to='/contact'><ContainerButton style={{ color: '#87ab36' }} active={this.props.location.pathname === '/contact' ? true : false}>CONTACT ME</ContainerButton></Link>
-              </Container>
-            </Menu>
-          </Segment>
-        </Visibility>
-        {children}
-      </Responsive>
-    )
-  }
+              <Link to="/">
+                <ContainerButton active={location.pathname === '/' ? true : false}>HOME</ContainerButton>{' '}
+              </Link>
+              <Link to="/aboutme">
+                <ContainerButton active={location.pathname === '/aboutme' ? true : false}>ABOUT ME</ContainerButton>
+              </Link>
+              <Link to="/experience">
+                <ContainerButton active={location.pathname === '/experience' ? true : false}>
+                  EXPERIENCE
+                </ContainerButton>
+              </Link>
+              <Link to="/projects">
+                <ContainerButton active={location.pathname === '/projects' ? true : false}>PROJECTS</ContainerButton>
+              </Link>
+              <Link to="/resume">
+                <ContainerButton active={location.pathname === '/resume' ? true : false}>RESUME</ContainerButton>
+              </Link>
+              <Link to="/contact">
+                <ContainerButton style={{ color: '#87ab36' }} active={location.pathname === '/contact' ? true : false}>
+                  CONTACT ME
+                </ContainerButton>
+              </Link>
+            </Container>
+          </Menu>
+        </Segment>
+      </Visibility>
+      {children}
+    </Responsive>
+  )
 }
 
 DesktopContainer.propTypes = {

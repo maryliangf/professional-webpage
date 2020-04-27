@@ -1,12 +1,15 @@
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const ProjectComponent = ({ size, folderName, imageName }) => (
   <Carousel showIndicators={false}>
-    {imagesArray(size, folderName, imageName).map(item => <div key={item.id}>
-      <img src={item.src} alt={item.id} />
-    </div>)}
+    {imagesArray(size, folderName, imageName).map((item) => (
+      <div key={item.id}>
+        <img src={item.src} alt={item.id} />
+      </div>
+    ))}
   </Carousel>
 )
 
@@ -19,6 +22,6 @@ const imagesArray = (size, folderName, imageName) => {
   return array
 }
 
-const padToN = (n, number) => (number <= 999) ? `${'0'.repeat(n - 1)}${number}`.slice(-n) : number;
+const padToN = (n, number) => (number <= 999 ? `${'0'.repeat(n - 1)}${number}`.slice(-n) : number)
 
 export default ProjectComponent
