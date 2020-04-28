@@ -58,6 +58,11 @@ const DesktopContainer = ({ location, children }) => {
               <Link to="/resume">
                 <ContainerButton active={location.pathname === '/resume' ? true : false}>RESUME</ContainerButton>
               </Link>
+              <Link to="/recipes">
+                <ContainerButton style={{ color: '#33cccc' }} active={location.pathname === '/recipes' ? true : false}>
+                  RECIPES
+                </ContainerButton>
+                </Link>
               <Link to="/contact">
                 <ContainerButton style={{ color: '#87ab36' }} active={location.pathname === '/contact' ? true : false}>
                   CONTACT ME

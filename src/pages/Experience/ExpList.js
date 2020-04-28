@@ -14,7 +14,7 @@ const ExpList = () => (
       <Exp
         src={UCSF}
         title={<div>Dietetic Internship at University of California, San Francisco (UCSF) Medical Center</div>}
-        subtitle="Dietetic Intern | July 2018 - Present"
+        subtitle="Dietetic Intern | July 2018 - July 2019"
         text={
           <div>
             <p style={{ textAlign: 'justify' }}>

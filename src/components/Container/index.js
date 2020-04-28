@@ -109,7 +109,7 @@ const Footer = () => (
           <i className="far fa-envelope fa-lg"></i>
         </StyledButton>
       </div>
-      <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2019 - Mary Liang - All Rights Reserved</p>
+      <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2020 - Mary Liang - All Rights Reserved</p>
     </Container>
   </Segment>
 )

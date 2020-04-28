@@ -63,7 +63,7 @@ const AboutRow = () => (
       <StyledHeader>About</StyledHeader>
       <Divider />
       <P>
-        Currently a Registered Dietitian in <br /> San Francisco
+        Full-time Registered Dietitian in <br /> San Francisco, part-time food enthusiast around the world.
       </P>
       <Link to="/aboutme">
         <StyledButton basic color="black" size="large">

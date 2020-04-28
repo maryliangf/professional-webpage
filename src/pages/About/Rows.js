@@ -58,26 +58,24 @@ const MeetRow = () => (
     </Column>
     <Column justify="start" align="start" width={9}>
       <StyledHeader left>MEET MARY</StyledHeader>
-      <P>Hi and welcome to my page!</P>
       <P>
-        My name is <b>Mary</b> and I am currently a dietetic intern at University of California, San Francisco Medical
-        Center. I earned my BS degree in Nutritional Sciences, Dietetics from <b>Boston University</b>.{' '}
+      Hello there, I'm Mary! I am a <b>Registered Dietitian Nutritionist (RDN)</b> currently based in the San Francisco Bay Area.{' '}
       </P>
       <P>
-        Though I was born and raised in the <b>Dominican Republic</b>, my parents are immigrants from <b>China</b>. I
-        then moved to the <b>United States</b> to complete my undergraduate degree in <b>Boston, MA</b> and am currently
-        based in <b>San Francisco, CA</b>.
+      Of <b>Chinese</b> descent, I grew up in the tropics of the <b>Dominican Republic</b>, then moved to <b>Boston, MA</b> to pursue 
+      my Bachelor of Science in Nutritional Sciences, Dietetics from Boston University. Being the migratory bird that I am, 
+      I then moved across the country to <b>San Francisco, CA</b> to complete my dietetic internship at the University of California, 
+      San Francisco (UCSF) Medical Center. After finishing up my internship, I decided to stay in this beautiful city!
       </P>
       <P>
         I am very passionate about helping others become healthier versions of themselves through evidence-based medical
-        nutrition therapy. My upbringing in a family that values health and watching my own mother struggle with genetic
-        nutritional conditions have shaped my love for nutrition. With my diverse background and rigorous training, I
+        nutrition therapy. With my diverse background and rigorous training, I
         hope to become a <b>Registered Dietitian</b> who brings{' '}
         <i>a unique approach to nutrition, wellness, and health</i>.
       </P>
       <P>
-        In addition to my love for health promotion via nutrition and fitness, I also enjoy photography and fashion, as
-        well as traveling, doing yoga, and learning to code.
+      Apart from my passion for nutrition, wellness, and fitness, 
+      I also enjoy cooking, traveling, practicing yoga, learning to code and design, as well as entertain myself with photography and fashion.
       </P>
     </Column>
   </Grid.Row>
