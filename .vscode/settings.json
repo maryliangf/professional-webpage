@@ -14,7 +14,4 @@
   "[javascriptreact]": {
     "editor.formatOnSave": false
   },
-  "eslint.workingDirectories": [
-    "./src"
-  ]
 }

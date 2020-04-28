@@ -59,23 +59,24 @@ const MeetRow = () => (
     <Column justify="start" align="start" width={9}>
       <StyledHeader left>MEET MARY</StyledHeader>
       <P>
-      Hello there, I'm Mary! I am a <b>Registered Dietitian Nutritionist (RDN)</b> currently based in the San Francisco Bay Area.{' '}
+        Hello there, I&apos;m Mary! I am a <b>Registered Dietitian Nutritionist (RDN)</b> currently based in the San
+        Francisco Bay Area.{' '}
       </P>
       <P>
-      Of <b>Chinese</b> descent, I grew up in the tropics of the <b>Dominican Republic</b>, then moved to <b>Boston, MA</b> to pursue 
-      my Bachelor of Science in Nutritional Sciences, Dietetics from Boston University. Being the migratory bird that I am, 
-      I then moved across the country to <b>San Francisco, CA</b> to complete my dietetic internship at the University of California, 
-      San Francisco (UCSF) Medical Center. After finishing up my internship, I decided to stay in this beautiful city!
+        Of <b>Chinese</b> descent, I grew up in the tropics of the <b>Dominican Republic</b>, then moved to{' '}
+        <b>Boston, MA</b> to pursue my Bachelor of Science in Nutritional Sciences, Dietetics from Boston University.
+        Being the migratory bird that I am, I then moved across the country to <b>San Francisco, CA</b> to complete my
+        dietetic internship at the University of California, San Francisco (UCSF) Medical Center. After finishing up my
+        internship, I decided to stay in this beautiful city!
       </P>
       <P>
         I am very passionate about helping others become healthier versions of themselves through evidence-based medical
-        nutrition therapy. With my diverse background and rigorous training, I
-        hope to become a <b>Registered Dietitian</b> who brings{' '}
-        <i>a unique approach to nutrition, wellness, and health</i>.
+        nutrition therapy. With my diverse background and rigorous training, I hope to become a{' '}
+        <b>Registered Dietitian</b> who brings <i>a unique approach to nutrition, wellness, and health</i>.
       </P>
       <P>
-      Apart from my passion for nutrition, wellness, and fitness, 
-      I also enjoy cooking, traveling, practicing yoga, learning to code and design, as well as entertain myself with photography and fashion.
+        Apart from my passion for nutrition, wellness, and fitness, I also enjoy cooking, traveling, practicing yoga,
+        learning to code and design, as well as entertain myself with photography and fashion.
       </P>
     </Column>
   </Grid.Row>

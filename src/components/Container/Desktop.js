@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Container, Header, Menu, Responsive, Segment, Visibility } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import { getWidth } from './index'
 
 const ContainerButton = styled(Menu.Item)`
-  &&&&&&:hover {
+  &:hover {
     color: #87ab36 !important;
   }
 `
 
-const DesktopContainer = ({ location, children }) => {
+const DesktopContainer = ({ children }) => {
+  const location = useLocation()
+
   const [fixed, setFixed] = useState(false)
 
   const hideFixedMenu = () => setFixed(false)
@@ -42,29 +44,27 @@ const DesktopContainer = ({ location, children }) => {
               style={{ width: 'auto', fontFamily: "'Lato' !important" }}
             >
               <Link to="/">
-                <ContainerButton active={location.pathname === '/' ? true : false}>HOME</ContainerButton>{' '}
+                <ContainerButton active={location.pathname === '/'}>HOME</ContainerButton>{' '}
               </Link>
               <Link to="/aboutme">
-                <ContainerButton active={location.pathname === '/aboutme' ? true : false}>ABOUT ME</ContainerButton>
+                <ContainerButton active={location.pathname === '/aboutme'}>ABOUT ME</ContainerButton>
               </Link>
               <Link to="/experience">
-                <ContainerButton active={location.pathname === '/experience' ? true : false}>
-                  EXPERIENCE
-                </ContainerButton>
+                <ContainerButton active={location.pathname === '/experience'}>EXPERIENCE</ContainerButton>
               </Link>
               <Link to="/projects">
-                <ContainerButton active={location.pathname === '/projects' ? true : false}>PROJECTS</ContainerButton>
+                <ContainerButton active={location.pathname === '/projects'}>PROJECTS</ContainerButton>
               </Link>
               <Link to="/resume">
-                <ContainerButton active={location.pathname === '/resume' ? true : false}>RESUME</ContainerButton>
+                <ContainerButton active={location.pathname === '/resume'}>RESUME</ContainerButton>
               </Link>
               <Link to="/recipes">
-                <ContainerButton style={{ color: '#33cccc' }} active={location.pathname === '/recipes' ? true : false}>
+                <ContainerButton style={{ color: '#33cccc' }} active={location.pathname === '/recipes'}>
                   RECIPES
                 </ContainerButton>
-                </Link>
+              </Link>
               <Link to="/contact">
-                <ContainerButton style={{ color: '#87ab36' }} active={location.pathname === '/contact' ? true : false}>
+                <ContainerButton style={{ color: '#87ab36' }} active={location.pathname === '/contact'}>
                   CONTACT ME
                 </ContainerButton>
               </Link>

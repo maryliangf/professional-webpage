@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Container, Icon, Menu, Responsive, Segment, Sidebar } from 'semantic-ui-react'
 
 import { getWidth } from './index'
@@ -23,7 +23,11 @@ const ROUTES = [
   },
   {
     to: '/resume',
-    label: 'Resumer',
+    label: 'Resume',
+  },
+  {
+    to: '/recipes',
+    label: 'Recipes',
   },
   {
     to: '/contact',
@@ -31,7 +35,9 @@ const ROUTES = [
   },
 ]
 
-const MobileContainer = ({ location, children }) => {
+const MobileContainer = ({ children }) => {
+  const location = useLocation()
+
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const handleSidebarHide = () => setSidebarOpen(false)

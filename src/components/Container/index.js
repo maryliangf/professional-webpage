@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Button, Container, Header, Segment } from 'semantic-ui-react'
 import styled from 'styled-components'
@@ -6,22 +5,18 @@ import styled from 'styled-components'
 import DesktopContainer from './Desktop'
 import MobileContainer from './Mobile'
 
-const ResponsiveContainer = ({ children, location }) => (
+const ResponsiveContainer = ({ children }) => (
   <div>
-    <DesktopContainer location={location}>
+    <DesktopContainer>
       {children}
       <Footer />
     </DesktopContainer>
-    <MobileContainer location={location}>
+    <MobileContainer>
       {children}
       <Footer />
     </MobileContainer>
   </div>
 )
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
 
 export default ResponsiveContainer
 
@@ -31,21 +26,27 @@ export const getWidth = () => {
 }
 
 const StyledButton = styled(Button)`
-  &&&&&& {
-    border: 2px solid black !important;
-    color: black !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid black !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  i {
+    color: black;
   }
-  & > * {
-    margin: 0;
-  }
-  &&&&&&:hover {
+
+  &:hover {
     background: black !important;
     color: white !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+
+  & > * {
+    margin: 0;
   }
 `
 
@@ -66,47 +67,23 @@ const Footer = () => (
           target="_blank"
           basic
           style={{
-            borderRadius: '0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             marginRight: '0.7rem',
-            width: '45px',
-            height: '45px',
           }}
         >
-          <i className="fab fa-instagram fa-lg"></i>
+          <i className="fab fa-instagram fa-lg" />
         </StyledButton>
         <StyledButton
           href="https://www.linkedin.com/in/maryliangf"
           target="_blank"
           basic
           style={{
-            borderRadius: '0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             marginRight: '0.7rem',
-            width: '45px',
-            height: '45px',
           }}
         >
-          <i className="fab fa-linkedin-in fa-lg"></i>
+          <i className="fab fa-linkedin-in fa-lg" />
         </StyledButton>
-        <StyledButton
-          href="mailto:maryliangf@gmail.com"
-          target="_blank"
-          basic
-          style={{
-            borderRadius: '0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '45px',
-            height: '45px',
-          }}
-        >
-          <i className="far fa-envelope fa-lg"></i>
+        <StyledButton href="mailto:maryliangf@gmail.com" target="_blank" basic>
+          <i className="far fa-envelope fa-lg" />
         </StyledButton>
       </div>
       <p style={{ marginTop: '8rem', marginBottom: '4rem' }}> Copyright 2020 - Mary Liang - All Rights Reserved</p>

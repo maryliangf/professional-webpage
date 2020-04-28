@@ -10,9 +10,8 @@ import ContactPage from './pages/Contact'
 import ExperiencePage from './pages/Experience'
 import HomePage from './pages/Home'
 import ProjectsPage from './pages/Projects'
-import ResumePage from './pages/Resume'
 import RecipesPage from './pages/Recipes'
-
+import ResumePage from './pages/Resume'
 
 const App = () => (
   <Router>

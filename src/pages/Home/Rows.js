@@ -21,13 +21,13 @@ const Divider = styled.div`
 `
 
 const StyledButton = styled(Button)`
-  &&&&&& {
+  & {
     border: 2px solid black !important;
     color: black !important;
     border-radius: 0 !important;
     font-size: 14px !important;
   }
-  &&&&&&:hover {
+  &:hover {
     background: black !important;
     color: white !important;
     border-radius: 0 !important;
