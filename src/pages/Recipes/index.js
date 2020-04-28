@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Container from '../../components/Container'
 import Hero from './Hero'
-import { Grid, Image, Header, Button } from 'semantic-ui-react'
+import { Grid, Header, Button } from 'semantic-ui-react'
 
 
 const StyledHeader = styled(Header)`
