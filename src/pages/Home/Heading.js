@@ -14,7 +14,7 @@ const HomepageHeading = () => (
     </HeroText>
     <br></br>
     <HeroText color="black" as="h2">
-      <Typed strings={['Welcome to my career portfolio.']} typeSpeed={110} />
+      <Typed strings={['Welcome to my page.']} typeSpeed={110} />
     </HeroText>
   </Hero>
 )

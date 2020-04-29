@@ -36,7 +36,7 @@ const DesktopContainer = ({ children }) => {
               }}
             />
           </Container>
-          <Menu fixed={fixed ? 'top' : null} pointing={!fixed} secondary={!fixed} size="large">
+          <Menu fixed={fixed ? 'top' : null} pointing={!fixed} secondary={!fixed} size="large" style={{ zIndex: 9999 }}>
             <Container
               fluid={false}
               textAlign="center"
@@ -44,7 +44,7 @@ const DesktopContainer = ({ children }) => {
               style={{ width: 'auto', fontFamily: "'Lato' !important" }}
             >
               <Link to="/">
-                <ContainerButton active={location.pathname === '/'}>HOME</ContainerButton>{' '}
+                <ContainerButton active={location.pathname === '/'}>HOME</ContainerButton>
               </Link>
               <Link to="/aboutme">
                 <ContainerButton active={location.pathname === '/aboutme'}>ABOUT ME</ContainerButton>
@@ -59,7 +59,11 @@ const DesktopContainer = ({ children }) => {
                 <ContainerButton active={location.pathname === '/resume'}>RESUME</ContainerButton>
               </Link>
               <Link to="/recipes">
-                <ContainerButton style={{ color: '#33cccc' }} active={location.pathname === '/recipes'}>
+                <ContainerButton
+                  style={{ color: '#33cccc' }}
+                  // active={location.pathname === '/recipes' || location.pathname === '/recipes/dessert'}
+                  active={RegExp('/recipes(/.*)?').test(location.pathname)}
+                >
                   RECIPES
                 </ContainerButton>
               </Link>

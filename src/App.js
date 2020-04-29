@@ -11,6 +11,7 @@ import ExperiencePage from './pages/Experience'
 import HomePage from './pages/Home'
 import ProjectsPage from './pages/Projects'
 import RecipesPage from './pages/Recipes'
+import DessertPage from './pages/Recipes/Dessert'
 import ResumePage from './pages/Resume'
 
 const App = () => (
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path="/projects" component={ProjectsPage} />
       <Route exact path="/resume" component={ResumePage} />
       <Route exact path="/recipes" component={RecipesPage} />
+      <Route exact path="/recipes/dessert" component={DessertPage} />
       <Route exact path="/contact" component={ContactPage} />
     </ScrollToTop>
   </Router>

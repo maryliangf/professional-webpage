@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Grid, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 
@@ -11,13 +12,6 @@ const StyledHeader = styled(Header)`
   width: 100%;
   text-align: center;
 `
-
-const RecipesPage = ({ location }) => (
-  <Container location={location}>
-    <Hero />
-    <GridRecipeCategories />
-  </Container>
-)
 
 const RecipeImageWrapper = styled.div`
   height: 40rem;
@@ -82,26 +76,39 @@ const GridRecipeCategories = () => (
     </Grid.Row>
 
     <Grid.Column>
-      <RecipeImageButton
-        recipecategory="Dessert"
-        src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
-      />
+      <Link to="/recipes/dessert">
+        <RecipeImageButton
+          recipecategory="Dessert"
+          src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
+        />
+      </Link>
     </Grid.Column>
 
     <Grid.Column>
-      <RecipeImageButton
-        recipecategory="Entrée"
-        src="https://images.unsplash.com/photo-1535473895227-bdecb20fb157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
+      <Link to="/recipes/entree">
+        <RecipeImageButton
+          recipecategory="Entrée"
+          src="https://images.unsplash.com/photo-1535473895227-bdecb20fb157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        />
+      </Link>
     </Grid.Column>
 
     <Grid.Column>
-      <RecipeImageButton
-        recipecategory="Snack"
-        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
+      <Link to="recipes/snack">
+        <RecipeImageButton
+          recipecategory="Snack"
+          src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        />
+      </Link>
     </Grid.Column>
   </StyledGrid>
+)
+
+const RecipesPage = ({ location }) => (
+  <Container location={location}>
+    <Hero />
+    <GridRecipeCategories />
+  </Container>
 )
 
 export default RecipesPage
