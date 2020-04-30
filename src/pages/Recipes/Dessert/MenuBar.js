@@ -12,7 +12,7 @@ const RecipeMenuBar = () => {
     <Ref innerRef={contextRef}>
       <Rail position="left" internal close>
         <Sticky context={contextRef} offset={160}>
-          <Menu text vertical>
+          <Menu text vertical style={{ marginLeft: '20px' }}>
             <Menu.Item header>RECIPES by course</Menu.Item>
             <Link to="/recipes/dessert">
               <Menu.Item name="Dessert" active={location.pathname === '/recipes/dessert'} />

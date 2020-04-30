@@ -21,21 +21,72 @@ const StyledGrid = styled(Grid)`
   }
 `
 
+const HoverPic = styled.img`
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+
+  @media (max-width: 1200px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media (max-width: 990px) {
+    width: 230px;
+    height: 230px;
+  }
+
+  @media (max-width: 935px) {
+    width: 220px;
+    height: 220px;
+  }
+
+  @media (max-width: 880px) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media (max-width: 850px) {
+    width: 190px;
+    height: 190px;
+  }
+
+  @media (max-width: 767px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+`
+
+const DessertTitle = styled.h3`
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 60px !important;
+
+  @media (max-width: 767px) {
+    margin-bottom: 20px !important;
+  }
+`
+
 const DessertRecipe = ({ recipename, src, link }) => (
-  <Grid.Column>
+  <Grid.Column style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
     <Link to={`/recipes/${link}`}>
-      <img src={src} rounded size="medium" style={{ width: '300px', height: '300px', objectFit: 'cover' }} />
+      <HoverPic src={src} />
     </Link>
-    <h3 style={{ textAlign: 'center', marginTop: '10px', width: '300px' }}>{recipename}</h3>
+    <DessertTitle>{recipename}</DessertTitle>
   </Grid.Column>
 )
 
 const GridDessertRecipe = () => (
-  <Grid columns={3} stackable>
+  <Grid columns={3} stackable centered relaxed>
     <Grid.Row centered>
       <StyledHeader style={{ fontSize: '2.5rem' }}>EXPLORE ALL DESSERT RECIPES</StyledHeader>
     </Grid.Row>
-    <Grid.Row centered>
+    <Grid.Row centerd columns={3}>
       <DessertRecipe
         link="bananabread"
         recipename="Coconut Flour Banana Bread"
@@ -53,6 +104,21 @@ const GridDessertRecipe = () => (
         recipename="Dessert3"
         src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
       />
+      <DessertRecipe
+        link="dessert3"
+        recipename="Dessert3"
+        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+      />
+      <DessertRecipe
+        link="dessert3"
+        recipename="Dessert3"
+        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+      />
+      <DessertRecipe
+        link="dessert3"
+        recipename="Dessert3"
+        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+      />
     </Grid.Row>
   </Grid>
 )
@@ -60,7 +126,7 @@ const GridDessertRecipe = () => (
 const DessertPage = () => (
   <Container>
     <Hero />
-    <StyledGrid>
+    <StyledGrid centered>
       <Grid.Column width={3} only="computer">
         <RecipeMenuBar />
       </Grid.Column>
