@@ -55,15 +55,11 @@ const DesktopContainer = ({ children }) => {
               <Link to="/projects">
                 <ContainerButton active={location.pathname === '/projects'}>PROJECTS</ContainerButton>
               </Link>
-              <Link to="/resume">
+              {/* <Link to="/resume">
                 <ContainerButton active={location.pathname === '/resume'}>RESUME</ContainerButton>
-              </Link>
+              </Link> */}
               <Link to="/recipes">
-                <ContainerButton
-                  style={{ color: '#33cccc' }}
-                  // active={location.pathname === '/recipes' || location.pathname === '/recipes/dessert'}
-                  active={RegExp('/recipes(/.*)?').test(location.pathname)}
-                >
+                <ContainerButton style={{ color: '#33cccc' }} active={RegExp('/recipes(/.*)?').test(location.pathname)}>
                   RECIPES
                 </ContainerButton>
               </Link>

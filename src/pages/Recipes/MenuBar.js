@@ -14,14 +14,14 @@ const RecipeMenuBar = () => {
         <Sticky context={contextRef} offset={160}>
           <Menu text vertical style={{ marginLeft: '20px' }}>
             <Menu.Item header>RECIPES by course</Menu.Item>
-            <Link to="/recipes/dessert">
-              <Menu.Item name="Dessert" active={location.pathname === '/recipes/dessert'} />
+            <Link to="/recipes/desserts">
+              <Menu.Item name="Desserts" active={location.pathname === '/recipes/desserts'} />
             </Link>
-            <Link to="/recipes/entree">
-              <Menu.Item name="Entrée" active={location.pathname === '/recipes/entree'} />
+            <Link to="/recipes/entrees">
+              <Menu.Item name="Entrées" active={location.pathname === '/recipes/entrees'} />
             </Link>
-            <Link to="/recipes/snack">
-              <Menu.Item name="Snack" active={location.pathname === '/recipes/snack'} />
+            <Link to="/recipes/snacks">
+              <Menu.Item name="Snacks" active={location.pathname === '/recipes/snacks'} />
             </Link>
           </Menu>
         </Sticky>

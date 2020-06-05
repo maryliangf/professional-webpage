@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { Grid, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+import DESSERTS from '../../../assets/recipes/desserts'
 import Container from '../../../components/Container'
+import RecipeMenuBar from '../MenuBar'
 import Hero from './Hero'
-import RecipeMenuBar from './MenuBar'
 
 const StyledHeader = styled(Header)`
   letter-spacing: 0.3rem !important;
@@ -74,7 +75,7 @@ const DessertTitle = styled.h3`
 
 const DessertRecipe = ({ recipename, src, link }) => (
   <Grid.Column style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
-    <Link to={`/recipes/${link}`}>
+    <Link to={`/recipes/desserts/${link}`}>
       <HoverPic src={src} />
     </Link>
     <DessertTitle>{recipename}</DessertTitle>
@@ -87,38 +88,9 @@ const GridDessertRecipe = () => (
       <StyledHeader style={{ fontSize: '2.5rem' }}>EXPLORE ALL DESSERT RECIPES</StyledHeader>
     </Grid.Row>
     <Grid.Row centerd columns={3}>
-      <DessertRecipe
-        link="bananabread"
-        recipename="Coconut Flour Banana Bread"
-        src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
-      />
-
-      <DessertRecipe
-        link="dessert2"
-        recipename="Dessert2"
-        src="https://images.unsplash.com/photo-1535473895227-bdecb20fb157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
-
-      <DessertRecipe
-        link="dessert3"
-        recipename="Dessert3"
-        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
-      <DessertRecipe
-        link="dessert3"
-        recipename="Dessert3"
-        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
-      <DessertRecipe
-        link="dessert3"
-        recipename="Dessert3"
-        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
-      <DessertRecipe
-        link="dessert3"
-        recipename="Dessert3"
-        src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-      />
+      {DESSERTS.map((recipe) => (
+        <DessertRecipe key={recipe.id} link={recipe.id} recipename={recipe.name} src={recipe.thumbnail} />
+      ))}
     </Grid.Row>
   </Grid>
 )

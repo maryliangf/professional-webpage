@@ -76,27 +76,27 @@ const GridRecipeCategories = () => (
     </Grid.Row>
 
     <Grid.Column>
-      <Link to="/recipes/dessert">
+      <Link to="/recipes/desserts">
         <RecipeImageButton
-          recipecategory="Dessert"
+          recipecategory="Desserts"
           src="https://images.unsplash.com/photo-1569762404472-026308ba6b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
         />
       </Link>
     </Grid.Column>
 
     <Grid.Column>
-      <Link to="/recipes/entree">
+      <Link to="/recipes/entrees">
         <RecipeImageButton
-          recipecategory="Entrée"
+          recipecategory="Entrées"
           src="https://images.unsplash.com/photo-1535473895227-bdecb20fb157?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
         />
       </Link>
     </Grid.Column>
 
     <Grid.Column>
-      <Link to="recipes/snack">
+      <Link to="recipes/snacks">
         <RecipeImageButton
-          recipecategory="Snack"
+          recipecategory="Snacks"
           src="https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
         />
       </Link>
