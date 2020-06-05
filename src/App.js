@@ -11,7 +11,7 @@ import ExperiencePage from './pages/Experience'
 import HomePage from './pages/Home'
 import ProjectsPage from './pages/Projects'
 import RecipesPage from './pages/Recipes'
-import ResumePage from './pages/Resume'
+// import ResumePage from './pages/Resume'
 
 const App = () => (
   <Router>
@@ -20,7 +20,7 @@ const App = () => (
       <Route exact path="/aboutme" component={AboutPage} />
       <Route exact path="/experience" component={ExperiencePage} />
       <Route exact path="/projects" component={ProjectsPage} />
-      <Route exact path="/resume" component={ResumePage} />
+      {/* <Route exact path="/resume" component={ResumePage} /> */}
       <Route exact path="/recipes" component={RecipesPage} />
       <Route exact path="/contact" component={ContactPage} />
     </ScrollToTop>

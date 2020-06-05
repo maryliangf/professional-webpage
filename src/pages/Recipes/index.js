@@ -78,6 +78,20 @@ const RecipeImageButton = ({ recipecategory, src }) => (
 const GridRecipeCategories = () => (
   <StyledGrid container stackable relaxed columns={3}>
     <Grid.Row centered>
+      <Header
+        style={{
+          fontSize: '2.5rem',
+          color: 'white',
+          backgroundColor: 'rgb(135, 171, 54)',
+          padding: '2rem 2rem',
+          letterSpacing: '0.3rem',
+          margin: '3rem 0',
+        }}
+      >
+        COMING SOON!
+        <br />
+        <span>Stay tuned.</span>
+      </Header>
       <StyledHeader style={{ fontSize: '2.5rem' }}>EXPLORE RECIPES</StyledHeader>
     </Grid.Row>
 
