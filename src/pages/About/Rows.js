@@ -118,12 +118,15 @@ const GoalsRow = () => (
       <P align="center">Data Analysis and Presentation</P>
       <P align="center">Public Speaking</P>
       <P align="center">Spanish Verbal and Written Translation </P>
+      <P align="center">CPSP Nutrition Services</P>
+      <P align="center">Breastfeeding Support and Education </P>
+      <P align="center">Clinical Reports Creation and Interpreation</P>
     </Column>
     <Column width={7} lean justify="start" align="center" padding>
       <StyledHeader as="h5" list>
         MY QUALITIES
       </StyledHeader>
-      <P align="center">Highly focused, disciplined, and motivated self-starter</P>
+      <P align="center">Highly focused, disciplined, and motivated self-starter with strong work ethic</P>
       <P align="center">Effective and active listener with excellent written and verbal communication skills</P>
       <P align="center">
         Proactive and detail-oriented problem-solver with strategic, independent, and critical thinking
@@ -132,7 +135,8 @@ const GoalsRow = () => (
         Genuinely dependable and committed to personal and team growth through hard work and team collaboration
       </P>
       <P align="center">Adapt flexibly to new situations and environments, as well as shifting priorities</P>
-      <P align="center">Always happy and open to learn new things</P>
+      <P align="center">Always happy and open to learn new things and find ways to better and improve my skills</P>
+      <P align="center">Manage time effecitvely, leading to improved efficiency and productivity</P>
     </Column>
   </Grid.Row>
 )

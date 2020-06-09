@@ -51,7 +51,7 @@ const Row = styled.div`
 export const Prone = () => (
   <>
     <SectionHeader>
-      <b>Case Study:</b> Enteral Nutrition Management <br />
+      <b id="CaseStudy">Case Study:</b> Enteral Nutrition Management <br />
       During Prone Ventilation
     </SectionHeader>
     <Date>June 18, 2019</Date>
@@ -199,7 +199,7 @@ export const Prone = () => (
     <Divider />
 
     <SectionHeader>
-      <b>Business Plan:</b> Nourish Bay Café
+      <b id="BusinessPlan">Business Plan:</b> Nourish Bay Café
     </SectionHeader>
     <Date>November 2018 - December 2018</Date>
     <SubHeader>Project Goals</SubHeader>

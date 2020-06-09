@@ -21,3 +21,7 @@ p {
 .tabular .item:hover {
     color: #87ab36 !important;
 }
+
+a {
+    color: #87ab36 !important;
+}

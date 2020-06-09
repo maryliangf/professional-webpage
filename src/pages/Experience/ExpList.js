@@ -1,9 +1,11 @@
 import React from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 
 import BMC from '../../assets/BMC.jpg'
 import BUDining from '../../assets/BU.jpg'
 import GBFB from '../../assets/GBFB.jpg'
 import HNRCA from '../../assets/HNRCA.jpg'
+import MNHC from '../../assets/MNHC.jpg'
 import Spaulding from '../../assets/Spaulding.jpg'
 import UCSF from '../../assets/ucsf.jpg'
 import Exp from './Exp'
@@ -11,6 +13,48 @@ import Exp from './Exp'
 const ExpList = () => (
   <div>
     <div id="Experience1">
+      <Exp
+        src={MNHC}
+        title="Mission Neighborhood Health Center, Shotwell and Excelsior clinics"
+        subtitle="Registered Dietitian/Chronic Care Coordinator | September 2019 - Present"
+        text={
+          <div>
+            <p style={{ textAlign: 'justify' }}>
+              Mission Neighborhood Health Center is a community services organization and a Federally Qualified Health
+              Center that provides compassionate, patient-centered care to the community, with a focus on the
+              Latinx/Hispanic population.
+            </p>
+            <ul style={{ textAlign: 'left' }}>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Providing <b>culturally competent</b> nutrition care, education, and counseling to patients of all age
+                groups at two clinics in a community health setting that focuses on providing services to the
+                Latinx/Hispanic population.
+              </li>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Applying thorough knowledge of <b>child</b> nutrition and health, <b>adult</b> nutrition, and{' '}
+                <b>maternal</b> and <b>perinatal</b> health, including <b>breastfeeding</b> support.
+              </li>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Monitoring and coordinating the care and treatment plan of patients with <b>chronic conditions</b>,
+                especially providing diabetes education and management, in collaboration with the healthcare team.
+              </li>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Implementing nutrition portion of the <b>Comprehensive Perinatal Services Program (CPSP)</b> and
+                ensuring all requirements are met.
+              </li>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Providing <b>breastfeeding education and support</b> to patients both prenatally and postnatally.
+              </li>
+              <li style={{ marginBottom: '0.7rem' }}>
+                Applying thorough knowledge of child nutrition and health, adult nutrition, and maternal and perinatal
+                health, including breastfeeding support
+              </li>
+            </ul>
+          </div>
+        }
+      />
+    </div>
+    <div id="Experience2">
       <Exp
         src={UCSF}
         title={<div>Dietetic Internship at University of California, San Francisco (UCSF) Medical Center</div>}
@@ -23,15 +67,15 @@ const ExpList = () => (
             </p>
             <ul style={{ textAlign: 'left' }}>
               <li style={{ marginBottom: '0.7rem' }}>
-                Provide nutrition care for adults and pediatric patents with a variety of complex medical conditions.
+                Provided nutrition care for adults and pediatric patents with a variety of complex medical conditions.
               </li>
               <li style={{ marginBottom: '0.7rem' }}>
-                Utilize nutrition care process to assess, identify nutrition diagnoses and design nutrition
+                Utilized nutrition care process to assess, identify nutrition diagnoses and design nutrition
                 interventions in an acute care setting.
               </li>
               <li style={{ marginBottom: '0.7rem' }}>
-                Develop enteral and parenteral nutrition support plans, and provide nutrition education for inpatients
-                and outpatients
+                Developed enteral and parenteral nutrition support plans, and provide nutrition education for inpatients
+                and outpatients.
               </li>
             </ul>
           </div>
@@ -76,8 +120,12 @@ const ExpList = () => (
         text={
           <ul style={{ textAlign: 'left' }}>
             <li style={{ marginBottom: '0.8rem' }}>
-              Delivered a <b>professional case study presentation</b> on the enteral nutrition management for patients
-              in the intensive care unit (ICU) who are undergoing prone ventilation.
+              Delivered a{' '}
+              <Link to="/projects#CaseStudy" scroll={(el) => el.scrollIntoView({ block: 'center' })}>
+                <b>professional case study presentation</b>
+              </Link>{' '}
+              on the enteral nutrition management for patients in the intensive care unit (ICU) who are undergoing prone
+              ventilation.
             </li>
             <li style={{ marginBottom: '0.8rem' }}>
               Delivered a <b>journal article review </b>presentation analyzing the available evidence regarding isolated
@@ -92,18 +140,21 @@ const ExpList = () => (
               description of the shots.
             </li>
             <li style={{ marginBottom: '0.8rem' }}>
-              Collaborated in a team of 5 to propose a <b>business plan </b>to provide an option to purchase hot foods
-              for patients in the infusion clinic at Mission Bay.
+              Collaborated in a team of 5 to propose a{' '}
+              <Link to="/projects#BusinessPlan" scroll={(el) => el.scrollIntoView({ block: 'center' })}>
+                <b>business plan </b>
+              </Link>
+              to provide an option to purchase hot foods for patients in the infusion clinic at Mission Bay.
             </li>
             <li style={{ marginBottom: '0.8rem' }}>
-              Mastering proficiency in <b>Epic electronic health record</b> and <b>Computrition</b> programs
+              Mastering proficiency in <b>Epic electronic health record</b> and <b>Computrition</b> programs.
             </li>
           </ul>
         }
         subheadPadding="0"
       />
     </div>
-    <div id="Experience2">
+    <div id="Experience3">
       <Exp
         src={BMC}
         title="Boston Medical Center Preventive Food Pantry"
@@ -128,7 +179,7 @@ const ExpList = () => (
         }
       />
     </div>
-    <div id="Experience3">
+    <div id="Experience4">
       <Exp
         src={Spaulding}
         title="Spaulding Rehabilitational Hospital"
@@ -151,7 +202,7 @@ const ExpList = () => (
         }
       />
     </div>
-    <div id="Experience4">
+    <div id="Experience5">
       <Exp
         src={HNRCA}
         title={
@@ -179,7 +230,7 @@ const ExpList = () => (
         }
       />
     </div>
-    <div id="Experience5">
+    <div id="Experience6">
       <Exp
         src={GBFB}
         title="The Greater Boston Food Bank (GBFB)"
@@ -200,7 +251,7 @@ const ExpList = () => (
         }
       />
     </div>
-    <div id="Experience6">
+    <div id="Experience7">
       <Exp
         src={BUDining}
         title="Boston University Dining Services"

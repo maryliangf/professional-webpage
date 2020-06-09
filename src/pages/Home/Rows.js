@@ -63,7 +63,7 @@ const AboutRow = () => (
       <StyledHeader>About</StyledHeader>
       <Divider />
       <P>
-        Full-time Registered Dietitian in <br /> San Francisco, part-time food enthusiast around the world.
+        Full-time Registered Dietitian in San Francisco, <br /> part-time food enthusiast around the world.
       </P>
       <Link to="/aboutme">
         <StyledButton basic color="black" size="large">
@@ -85,7 +85,9 @@ const ExperienceRow = () => (
     <Column>
       <StyledHeader>Experience</StyledHeader>
       <Divider />
-      <P>Take a closer look into my past experiences and the skills I have developed along the way.</P>
+      <P>
+        Take a closer look into my past experiences and <br /> the skills I have developed along the way.
+      </P>
       <Link to="/experience">
         <StyledButton basic color="black" size="large">
           VIEW MY WORK

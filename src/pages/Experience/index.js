@@ -21,21 +21,24 @@ const ExperiencePage = ({ location }) => {
                   <Sticky context={contextRef} offset={160}>
                     <Menu pointing secondary vertical>
                       <Link to="/experience#Experience1">
-                        <Menu.Item name="Dietetic Internship at UCSF" />
+                        <Menu.Item name="Registered Dietitian and Chronic Care Coordinator at MNHC" />
                       </Link>
                       <Link to="/experience#Experience2">
-                        <Menu.Item name="Boston Medical Center Preventive Food Pantry" />
+                        <Menu.Item name="Dietetic Internship at UCSF" />
                       </Link>
                       <Link to="/experience#Experience3">
-                        <Menu.Item name="Spaulding Rehabilitational Hospital" />
+                        <Menu.Item name="Boston Medical Center Preventive Food Pantry" />
                       </Link>
                       <Link to="/experience#Experience4">
-                        <Menu.Item name="Energy Metabolism Lab at the HNRCA" />
+                        <Menu.Item name="Spaulding Rehabilitational Hospital" />
                       </Link>
                       <Link to="/experience#Experience5">
-                        <Menu.Item name="The Greater Boston Food Bank" />
+                        <Menu.Item name="Energy Metabolism Lab at the HNRCA" />
                       </Link>
                       <Link to="/experience#Experience6">
+                        <Menu.Item name="The Greater Boston Food Bank" />
+                      </Link>
+                      <Link to="/experience#Experience7">
                         <Menu.Item name="Boston University Dining Services" />
                       </Link>
                     </Menu>
