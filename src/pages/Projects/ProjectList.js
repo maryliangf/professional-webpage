@@ -2,6 +2,8 @@ import React from 'react'
 import { Header, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+import MEP1 from '../../assets/MEP1.png'
+import MEP2 from '../../assets/MEP2.png'
 import TMP1 from '../../assets/TMP1.jpg'
 import TMP2 from '../../assets/TMP2.jpg'
 import Project from './Project'
@@ -111,6 +113,70 @@ export const Prone = () => (
         representation of the zenith of the clinical knowledge and judgment I was developing throughout my internship
         rotations. This was supported by innumerable hours of research of evidence-based practice, as well as the
         integration and cooperation of the healthcare team to carry out patient-centered care.
+      </P>
+    </SectionContainer>
+    <Divider />
+
+    <SectionHeader>
+      <b id="CaseStudy">Patient Education Handout:</b> Mediterranean Eating Pattern <br />
+    </SectionHeader>
+    <Date>July 5, 2019</Date>
+    <SubHeader>Project Goals</SubHeader>
+    <SectionContainer>
+      <P>
+        The goal was to create a patient education handout after researching relevant journal articles related to the
+        topic.
+      </P>
+      <P>
+        For this project, I decided to create a patient education handout for Mediterranean Eating Pattern as I was
+        inspired by my outpatient rotation at the UCSF Center for Prevention of Heart and Vascular Disease.
+      </P>
+    </SectionContainer>
+    <br />
+    <SubHeader>The Process</SubHeader>
+    <ol>
+      <li>
+        <P>Select a topic of interest.</P>
+      </li>
+      <li>
+        <P>Review resources and literature regarding the topic.</P>
+      </li>
+      <li>
+        <P>Design and format the information in handout form, with a readability of sixth-grade level.</P>
+      </li>
+      <li>
+        <P>Submit to preceptor for review and final changes.</P>
+      </li>
+    </ol>
+    <br />
+    <SubHeader>The Result</SubHeader>
+    <div>
+      <Image
+        alt="The Mediterranean Diet Handout Page 1"
+        src={MEP1}
+        rounded
+        size="medium"
+        style={{
+          width: '772px',
+          objectFit: 'cover',
+        }}
+        bordered
+      />
+      <br />
+      <Image
+        alt="Mediterranean Diet Handout Page 2"
+        src={MEP2}
+        style={{ width: '772px', objectFit: 'cover' }}
+        bordered
+      />
+    </div>
+    <br />
+    <SubHeader>Final Thoughts</SubHeader>
+    <SectionContainer>
+      <P>
+        I really enjoyed working in this handout. It brought out the &quot;graphic designer&quot; in me, while still
+        challenging me with what nutrition information to include and how to phrase it for our patients. I would
+        definitely want to develop more patient education handouts in the future.
       </P>
     </SectionContainer>
     <Divider />
