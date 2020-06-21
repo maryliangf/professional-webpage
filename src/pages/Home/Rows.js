@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Grid, Header, Image } from 'semantic-ui-react'
+import { Grid, Header, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import ContactPic from '../../assets/contact.jpg'
 import MaryPic from '../../assets/IMG_4980.JPG'
 import PeachPic from '../../assets/Peach.jpg'
+import { SquareButton } from '../../components/Button'
 
 const StyledHeader = styled(Header)`
   font-size: 4em !important;
@@ -20,20 +21,7 @@ const Divider = styled.div`
   margin: 0 auto;
 `
 
-const StyledButton = styled(Button)`
-  & {
-    border: 2px solid black !important;
-    color: black !important;
-    border-radius: 0 !important;
-    font-size: 14px !important;
-  }
-  &:hover {
-    background: black !important;
-    color: white !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-`
+const StyledButton = SquareButton
 
 const P = styled.p`
   font-size: 1em;
