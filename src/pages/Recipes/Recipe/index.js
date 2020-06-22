@@ -1,23 +1,13 @@
 import React from 'react'
-import { Link, Redirect, useParams } from 'react-router-dom'
-import { Card, Grid, Image } from 'semantic-ui-react'
-import styled from 'styled-components'
+import { Redirect, useParams } from 'react-router-dom'
+import { Grid } from 'semantic-ui-react'
 
-import MaryPic from '../../../assets/IMG_4980.JPG'
 import RECIPES from '../../../assets/recipes'
-import { SquareButton } from '../../../components/Button'
 import Container from '../../../components/Container'
+import MeetMary from '../../../components/MeetMary'
 import Hero from '../Dessert/Hero'
 import RecipeMenuBar from '../MenuBar'
 import RecipeComponent from './Component'
-
-const StyledGrid = styled(Grid)`
-  margin: 1rem !important;
-  margin-bottom: 8rem !important;
-  @media (max-width: 425px) {
-    padding: 0 !important;
-  }
-`
 
 const RecipePage = () => {
   const { recipeId } = useParams()
@@ -28,35 +18,17 @@ const RecipePage = () => {
   return (
     <Container>
       <Hero />
-      <StyledGrid centered>
-        <Grid.Column width={3} only="computer">
+      <Grid padded centered style={{ padding: '5rem 1rem' }}>
+        <Grid.Column computer={3} only="computer">
           <RecipeMenuBar />
         </Grid.Column>
-        <Grid.Column width={10}>
+        <Grid.Column mobile={16} tablet={11} computer={8}>
           <RecipeComponent recipe={recipe} />
         </Grid.Column>
-        <Grid.Column width={3} only="computer" style={{ paddingTop: '5rem' }}>
-          <Card>
-            <Image src={MaryPic} wrapped ui={false} style={{ objectFit: 'cover' }} />
-            <Card.Content>
-              <Card.Header style={{ fontWeight: '500' }}> Hi there! </Card.Header>
-              {/* <Card.Meta>Joined in 2016</Card.Meta> */}
-              <Card.Description>
-                <p style={{ paddingBottom: '1.5rem' }}>
-                  I&apos;m Mary, a registered dietitian on a mission to guide people towards a more balanced lifestyle
-                  by building habits for a sustainable, healthful eating pattern.
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <Link to="/aboutme">
-                    <SquareButton>MEET MARY</SquareButton>
-                  </Link>
-                </div>
-              </Card.Description>
-            </Card.Content>
-            {/* <Card.Content extra style={{ align: 'center' }}></Card.Content> */}
-          </Card>
+        <Grid.Column tablet={5} computer={5} only="tablet computer">
+          <MeetMary />
         </Grid.Column>
-      </StyledGrid>
+      </Grid>
     </Container>
   )
 }

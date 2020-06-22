@@ -55,6 +55,7 @@ const StyledButton = styled(Button)`
   color: white !important;
   border-radius: 0 !important;
   font-size: 18px !important;
+  font-weight: 400 !important;
   &:hover {
     background: white !important;
     color: black !important;

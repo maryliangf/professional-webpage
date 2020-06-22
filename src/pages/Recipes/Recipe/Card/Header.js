@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { authors } from '../../../../assets/authors'
 
 const StyledHeader = styled.div`
-  background-color: rgb(51, 204, 204);
+  background-color: rgb(32, 178, 170);
   padding: 3rem;
   color: #fff;
   font-size: 1rem;
@@ -15,52 +15,61 @@ const StyledHeader = styled.div`
   .meta {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .name {
+      font-size: 2.8rem;
+      font-weight: 300;
+      margin: 0;
+      margin-right: 0.5rem;
+    }
+
     .thumbnail {
       height: 150px;
       width: 150px;
       object-fit: cover;
       border-radius: 4px;
     }
+  }
 
-    .info {
-      flex: 1 1 auto;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 1rem;
-      font-weight: 150;
-      padding-right: 2rem;
+  .info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 150;
 
-      .author {
-        padding-top: 1rem;
-        padding-left: 1rem;
-        font-weight: 450;
-        font-size: 1.5rem;
-        align-self: flex-start;
-      }
+    p {
+      margin: 0;
+    }
 
-      .name {
-        font-size: 2rem;
-        font-weight: 300;
-        padding-bottom: 1rem;
-        padding-right: 2rem;
-        margin: 0;
-      }
-      p {
-        margin: 0;
-      }
+    .description {
+      font-style: italic;
+    }
+
+    .author {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      font-weight: 450;
+      font-size: 1.5rem;
+      align-self: flex-start;
     }
   }
 
   .tablerow {
     display: flex;
     border: 2px solid #fff;
-    margin-top: 2rem;
 
     .item {
       padding: 1rem;
       flex: 1 1 auto;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
 
       h4 {
         margin-bottom: 0;
@@ -72,6 +81,37 @@ const StyledHeader = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem;
+
+    .meta {
+      .name {
+        font-size: 1.8rem;
+      }
+      .thumbnail {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    .info {
+      .author {
+        font-size: 1rem;
+        padding: 0;
+      }
+    }
+
+    .tablerow {
+      .item {
+        padding: 0.5rem;
+        h4,
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 `
 
 const CardHeader = ({ recipe }) => {
@@ -79,22 +119,22 @@ const CardHeader = ({ recipe }) => {
   return (
     <StyledHeader>
       <div className="meta">
-        <div className="info">
-          <h1 className="name">{recipe.name}</h1>
-          <p>{recipe.info}</p>
-          <p className="author">
-            Author: {author.name}
-            <a
-              href={author.instagram[0].link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ paddingLeft: '0.5rem' }}
-            >
-              {author.instagram[0].handle}
-            </a>
-          </p>
-        </div>
+        <h1 className="name">{recipe.name}</h1>
         <img className="thumbnail" src={recipe.thumbnail} />
+      </div>
+      <div className="info">
+        <p className="description">{recipe.info}</p>
+        <p className="author">
+          Author: {author.name}
+          <a
+            href={author.instagram[0].link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ paddingLeft: '0.5rem' }}
+          >
+            {author.instagram[0].handle}
+          </a>
+        </p>
       </div>
       <div className="tablerow">
         <div className="item">

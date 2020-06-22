@@ -73,10 +73,10 @@ const DessertTitle = styled.h3`
   }
 `
 
-const DessertRecipe = ({ recipename, src, link }) => (
+export const DessertRecipe = ({ recipename, src, link, size }) => (
   <Grid.Column style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
     <Link to={`/recipes/desserts/${link}`}>
-      <HoverPic src={src} />
+      <HoverPic src={src} style={size ? { width: size, height: size } : undefined} />
     </Link>
     <DessertTitle>{recipename}</DessertTitle>
   </Grid.Column>

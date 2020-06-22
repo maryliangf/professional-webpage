@@ -2,10 +2,29 @@ const DESSERTS = [
   {
     id: 'bananabread',
     name: 'Coconut Flour Banana Bread (No Added Sugar)',
+    text:
+      "Ahhh. Banana bread. Two words that should always go together. You bet I will voluntarily let my bananas get so ripe and freckled that it'll give me an excuse to make this recipe. It sparks so much joy to have a batch of these ready so I can have them whenever I want. To be completely honest, mine does not ever make it to the freezer because it ends up in my tummy. I created this no sugar added recipe because all the banana breads I had tried or bought have been too sweet for me. I hope you enjoy it as much as I do!",
     info:
       'Enjoy this naturally sweetened, moist, and tender coconut flour banana bread (no added sugars!) as a snack, dessert, or breakfast. It is not only super easy to make, but you can also customize it with whatever toppings you like or have on hand.',
     thumbnail:
-      'https://images.unsplash.com/photo-1569762404472-026308ba6b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
+      'https://firebasestorage.googleapis.com/v0/b/mary-portfolio.appspot.com/o/Recipes%2FDessert%2FBanana%20Bread%2FBananaBread1.jpg?alt=media&token=71a8ba76-ee19-49ce-8eb1-74a3f1c94d70',
+    images: [
+      {
+        text: 'Wet ingredients I used',
+        link:
+          'https://firebasestorage.googleapis.com/v0/b/mary-portfolio.appspot.com/o/Recipes%2FDessert%2FBanana%20Bread%2FBananaBread2_WetIng.jpg?alt=media&token=f1b837da-7a51-4c7b-862e-9a5a355d2a91',
+      },
+      {
+        text: 'Dry ingredients I used',
+        link:
+          'https://firebasestorage.googleapis.com/v0/b/mary-portfolio.appspot.com/o/Recipes%2FDessert%2FBanana%20Bread%2FBananaBread3_DryIng.JPG?alt=media&token=11c39df2-7f2e-4f44-8d3d-561ea77d925f',
+      },
+      {
+        text: 'Optional ingredients you can add',
+        link:
+          'https://firebasestorage.googleapis.com/v0/b/mary-portfolio.appspot.com/o/Recipes%2FDessert%2FBanana%20Bread%2FBananaBread4_OptionalIng.JPG?alt=media&token=c4a8cd65-d639-4608-87c9-a2436dbf047b',
+      },
+    ],
     author: 'maryliang',
     prepTime: '15 minutes',
     cookTime: '45 minutes',
@@ -26,7 +45,7 @@ const DESSERTS = [
       'As much cinnamon and nutmeg as you like',
       'Optional: dark chocolate chips/chunks, unsweetened coconut flakes, and walnuts',
     ],
-    text: 'some random text here',
+
     instructions: [
       'Preheat oven to 350 degrees F (176 C).',
       'Line a loaf pan with parchment paper or grease with coconut or avocado oil.',
@@ -41,6 +60,7 @@ const DESSERTS = [
     notes: [
       'Store leftovers in container at room temperature for up to a few days. Slice and freeze for up to months.',
       'If using almond flour: use 2 cups of almond flour instead of 1/4 cup coconut flour and 1 egg instead of 3 eggs.',
+      'Since this recipe contains no added sugars, be sure to use even riper bananas if you want your banana bread to be sweeter.',
     ],
     tags: ['banana', 'bread', 'dessert', 'coconut flour'],
   },
@@ -74,6 +94,36 @@ const DESSERTS = [
   },
   {
     id: 'dessert4',
+    name: 'Dessert Two',
+    info: 'Some desc here',
+    thumbnail:
+      'https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    author: 'maryliang',
+    ingredients: ['banana', 'flour', 'oven'],
+    text: 'some random text here',
+    prepTime: '20 min',
+    cookTime: '30 min',
+    totalTime: '50 min',
+    instructions: ['walk', 'run', 'jump'],
+    tags: ['banana', 'bread', 'dessert'],
+  },
+  {
+    id: 'dessert5',
+    name: 'Dessert Two',
+    info: 'Some desc here',
+    thumbnail:
+      'https://images.unsplash.com/photo-1559852925-a9b83b8387d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    author: 'maryliang',
+    ingredients: ['banana', 'flour', 'oven'],
+    text: 'some random text here',
+    prepTime: '20 min',
+    cookTime: '30 min',
+    totalTime: '50 min',
+    instructions: ['walk', 'run', 'jump'],
+    tags: ['banana', 'bread', 'dessert'],
+  },
+  {
+    id: 'dessert6',
     name: 'Dessert Two',
     info: 'Some desc here',
     thumbnail:
