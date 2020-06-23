@@ -13,12 +13,12 @@ const StyledCard = styled.div`
   flex-flow: column;
 `
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, print }) => {
   return (
     <StyledCard>
-      <CardHeader recipe={recipe} />
-      <CardBody recipe={recipe} />
-      <CardFooter recipe={recipe} />
+      <CardHeader recipe={recipe} print={print} />
+      <CardBody recipe={recipe} print={print} />
+      <CardFooter recipe={recipe} print={print} />
     </StyledCard>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import { authors } from '../../../../assets/authors'
@@ -37,8 +38,6 @@ const StyledHeader = styled.div`
     flex: 1 1 auto;
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
     font-size: 1rem;
     font-weight: 150;
 
@@ -50,12 +49,49 @@ const StyledHeader = styled.div`
       font-style: italic;
     }
 
+    .divauthorprint {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.9rem;
+    }
+
     .author {
       margin: 1rem 0;
       padding-left: 1rem;
-      font-weight: 450;
+      font-weight: 300;
       font-size: 1.5rem;
       align-self: flex-start;
+    }
+
+    .button {
+      justify-content: flex-end;
+      width: 190px;
+      height: 50px;
+      border: 1.5px solid white;
+      border-radius: 0 !important;
+      background-color: rgb(32, 178, 170);
+      color: white;
+
+      .icon {
+        color: white;
+        padding-right: 3rem;
+      }
+
+      &:hover {
+        background: white;
+        color: rgb(32, 178, 170);
+        border-radius: 0;
+        box-shadow: none;
+        .icon {
+          color: rgb(32, 178, 170);
+        }
+      }
+
+      & > * {
+        margin: 0;
+      }
     }
   }
 
@@ -114,7 +150,7 @@ const StyledHeader = styled.div`
   }
 `
 
-const CardHeader = ({ recipe }) => {
+const CardHeader = ({ recipe, print }) => {
   const author = authors[recipe.author]
   return (
     <StyledHeader>
@@ -124,17 +160,28 @@ const CardHeader = ({ recipe }) => {
       </div>
       <div className="info">
         <p className="description">{recipe.info}</p>
-        <p className="author">
-          Author: {author.name}
-          <a
-            href={author.instagram[0].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ paddingLeft: '0.5rem' }}
-          >
-            {author.instagram[0].handle}
-          </a>
-        </p>
+        <div className="divauthorprint">
+          <p className="author">
+            Author: {author.name}
+            <a
+              href={author.instagram[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ paddingLeft: '0.5rem' }}
+            >
+              {author.instagram[0].handle}
+            </a>
+          </p>
+          <p>
+            {print ? null : (
+              <button className="button">
+                {' '}
+                <Icon className="icon" name="print" size="big" />
+                PRINT RECIPE
+              </button>
+            )}
+          </p>
+        </div>
       </div>
       <div className="tablerow">
         <div className="item">

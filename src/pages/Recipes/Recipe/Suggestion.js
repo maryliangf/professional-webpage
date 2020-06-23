@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import RECIPES from '../../../assets/recipes'
@@ -15,12 +17,43 @@ const Suggestion = styled.div`
   .recs {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    & > * {
-      margin: 0 3.5rem;
+    justify-content: space-between;
+    & > *:nth-child(odd) {
+      margin-right: 6%;
     }
   }
 `
+
+const RecipeRecsStyle = styled.div`
+  width: 47%;
+  display: flex;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2.5px solid black;
+
+  .imagerec {
+    object-fit: cover;
+    width: 170px;
+    height: 170px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .titlerec {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 2rem;
+  }
+`
+
+const RecipeRecs = ({ recipename, src, link, size }) => (
+  <RecipeRecsStyle>
+    <Link to={`/recipes/desserts/${link}`}>
+      <img className="imagerec" src={src} />
+    </Link>
+    <p className="titlerec">{recipename}</p>
+  </RecipeRecsStyle>
+)
 
 const RecipeSuggestion = ({ recipe }) => {
   // Search tags
@@ -55,14 +88,13 @@ const RecipeSuggestion = ({ recipe }) => {
       <p>If you love this recipe...</p>
       <div className="recs">
         {recommendedRecipes.map((recommended) => (
-          <div key={recommended.id}>
-            <DessertRecipe
-              recipename={recommended.name}
-              link={recommended.id}
-              src={recommended.thumbnail}
-              size="230px"
-            />
-          </div>
+          <RecipeRecs
+            key={recommended.id}
+            recipename={recommended.name}
+            link={recommended.id}
+            src={recommended.thumbnail}
+            size="230px"
+          />
         ))}
       </div>
     </Suggestion>
