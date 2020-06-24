@@ -5,19 +5,31 @@ import styled from 'styled-components'
 import RECIPES from '../../assets/recipes'
 
 const Suggestion = styled.div`
-  p {
+  & > p {
     padding: 4rem 0 1rem 0;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 400;
     text-align: left;
   }
 
-  .recs {
+  & > .recs {
     display: flex;
     flex-flow: row wrap;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     & > *:nth-child(odd) {
       margin-right: 6%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    & > .recs {
+      flex-flow: column;
+      & > *:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+    & > p {
+      font-size: 26px;
     }
   }
 `
@@ -25,7 +37,7 @@ const Suggestion = styled.div`
 const RecipeRecsStyle = styled.div`
   width: 47%;
   display: flex;
-  flex-flow: row wrap;
+  align-items: center;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
   border-bottom: 2.5px solid black;
@@ -42,6 +54,22 @@ const RecipeRecsStyle = styled.div`
     font-size: 22px;
     font-weight: 600;
     margin-left: 2rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-flow: column;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+    .titlerec {
+      margin-left: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    align-items: center;
   }
 `
 
