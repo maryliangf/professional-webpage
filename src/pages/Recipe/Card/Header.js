@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import { authors } from '../../../../assets/authors'
+import { authors } from '../../../assets/authors'
 
 const StyledHeader = styled.div`
   background-color: rgb(32, 178, 170);
@@ -73,6 +74,7 @@ const StyledHeader = styled.div`
       border-radius: 0 !important;
       background-color: rgb(32, 178, 170);
       color: white;
+      cursor: pointer;
 
       .icon {
         color: white;
@@ -152,6 +154,7 @@ const StyledHeader = styled.div`
 
 const CardHeader = ({ recipe, print }) => {
   const author = authors[recipe.author]
+  const location = useLocation()
   return (
     <StyledHeader>
       <div className="meta">
@@ -174,11 +177,12 @@ const CardHeader = ({ recipe, print }) => {
           </p>
           <p>
             {print ? null : (
-              <button className="button">
-                {' '}
-                <Icon className="icon" name="print" size="big" />
-                PRINT RECIPE
-              </button>
+              <Link to={`${location.pathname}/print`} target="_blank">
+                <button className="button" href={`/${location.pathname}/print`}>
+                  <Icon className="icon" name="print" size="big" />
+                  PRINT RECIPE
+                </button>
+              </Link>
             )}
           </p>
         </div>

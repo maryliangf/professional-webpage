@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import ScrollToTop from './components/ScrollToTop'
 import AboutPage from './pages/About'
+import CategoryPage from './pages/Category'
 import ContactPage from './pages/Contact'
 import ExperiencePage from './pages/Experience'
 import HomePage from './pages/Home'
 import ProjectsPage from './pages/Projects'
+import RecipePage from './pages/Recipe'
 import RecipesPage from './pages/Recipes'
-import DessertPage from './pages/Recipes/Dessert'
-import RecipePage from './pages/Recipes/Recipe'
 // import ResumePage from './pages/Resume'
 
 const App = () => (
@@ -22,11 +22,11 @@ const App = () => (
       <Route exact path="/aboutme" component={AboutPage} />
       <Route exact path="/experience" component={ExperiencePage} />
       <Route exact path="/projects" component={ProjectsPage} />
+      <Route exact path="/contact" component={ContactPage} />
       {/* <Route exact path="/resume" component={ResumePage} /> */}
       <Route exact path="/recipes" component={RecipesPage} />
-      <Route exact path="/recipes/desserts" component={DessertPage} />
-      <Route exact path="/recipes/desserts/:recipeId" component={RecipePage} />
-      <Route exact path="/contact" component={ContactPage} />
+      <Route exact path="/recipes/:category" component={CategoryPage} />
+      <Route path="/recipes/:category/:recipeId" component={RecipePage} />
     </ScrollToTop>
   </Router>
 )

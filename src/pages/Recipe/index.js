@@ -1,20 +1,23 @@
 import React from 'react'
-import { Redirect, useParams } from 'react-router-dom'
+import { Redirect, useLocation, useParams } from 'react-router-dom'
 import { Grid } from 'semantic-ui-react'
 
-import RECIPES from '../../../assets/recipes'
-import Container from '../../../components/Container'
-import MeetMary from '../../../components/MeetMary'
-import Hero from '../Dessert/Hero'
-import RecipeMenuBar from '../MenuBar'
+import RECIPES from '../../assets/recipes'
+import Container from '../../components/Container'
+import MeetMary from '../../components/MeetMary'
+import Hero from '../Category/Dessert/Hero'
+import RecipeMenuBar from '../Recipes/MenuBar'
+import RecipeCard from './Card'
 import RecipeComponent from './Component'
 
 const RecipePage = () => {
   const { recipeId } = useParams()
+  const location = useLocation()
 
   const recipe = RECIPES.find((r) => r.id === recipeId)
 
   if (!recipe) return <Redirect to="/recipes" />
+  if (location.pathname.split('/').includes('print')) return <RecipeCard recipe={recipe} print />
   return (
     <Container>
       <Hero />

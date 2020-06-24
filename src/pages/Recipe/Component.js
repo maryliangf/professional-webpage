@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { useReactToPrint } from 'react-to-print'
 import { Grid, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
@@ -9,7 +10,6 @@ const Name = styled.h1`
   font-size: 3rem;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  /* padding-top: 3.5rem; */
   text-align: center;
   @media screen and (max-width: 480px) {
     padding-top: 0;

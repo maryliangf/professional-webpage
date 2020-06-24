@@ -21,10 +21,10 @@ const ROUTES = [
     to: '/projects',
     label: 'Projects',
   },
-  {
-    to: '/resume',
-    label: 'Resume',
-  },
+  // {
+  //   to: '/resume',
+  //   label: 'Resume',
+  // },
   {
     to: '/recipes',
     label: 'Recipes',

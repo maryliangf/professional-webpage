@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import DESSERTS from '../../../assets/recipes/desserts'
 import Container from '../../../components/Container'
-import RecipeMenuBar from '../MenuBar'
+import RecipeMenuBar from '../../Recipes/MenuBar'
 import Hero from './Hero'
 
 const StyledHeader = styled(Header)`

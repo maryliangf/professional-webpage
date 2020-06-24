@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import RECIPES from '../../../assets/recipes'
-import { DessertRecipe } from '../Dessert'
+import RECIPES from '../../assets/recipes'
 
 const Suggestion = styled.div`
   p {
@@ -17,7 +15,7 @@ const Suggestion = styled.div`
   .recs {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     & > *:nth-child(odd) {
       margin-right: 6%;
     }
@@ -27,6 +25,7 @@ const Suggestion = styled.div`
 const RecipeRecsStyle = styled.div`
   width: 47%;
   display: flex;
+  flex-flow: row wrap;
   padding-bottom: 2.5rem;
   margin-bottom: 2.5rem;
   border-bottom: 2.5px solid black;
@@ -46,7 +45,7 @@ const RecipeRecsStyle = styled.div`
   }
 `
 
-const RecipeRecs = ({ recipename, src, link, size }) => (
+const RecipeRecs = ({ recipename, src, link }) => (
   <RecipeRecsStyle>
     <Link to={`/recipes/desserts/${link}`}>
       <img className="imagerec" src={src} />
