@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react'
-import { useReactToPrint } from 'react-to-print'
+import React from 'react'
 import { Grid, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 

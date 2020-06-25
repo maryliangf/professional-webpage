@@ -73,29 +73,38 @@ const DessertTitle = styled.h3`
   }
 `
 
-const DessertRecipe = ({ recipename, src, link, size }) => (
+const RecipeCard = ({ categoryId, recipename, src, link, size }) => (
   <Grid.Column style={{ display: 'flex', flexFlow: 'column nowrap', alignItems: 'center' }}>
-    <Link to={`/recipes/desserts/${link}`}>
+    <Link to={`/recipes/${categoryId}/${link}`}>
       <HoverPic src={src} style={size ? { width: size, height: size } : undefined} />
     </Link>
     <DessertTitle>{recipename}</DessertTitle>
   </Grid.Column>
 )
 
-const GridDessertRecipe = () => (
+const GridRecipe = ({ categoryId }) => (
   <Grid columns={3} stackable centered relaxed>
     <Grid.Row centered>
-      <StyledHeader style={{ fontSize: '2.5rem' }}>EXPLORE ALL DESSERT RECIPES</StyledHeader>
+      <StyledHeader style={{ fontSize: '2.5rem', textTransform: 'uppercase' }}>
+        EXPLORE ALL {categoryId} RECIPES
+      </StyledHeader>
     </Grid.Row>
     <Grid.Row centerd columns={3}>
+      {/* TODO: CHANGE DESSERTS TO DYNAMIC ARRAY, MAKE IF THEN STATEMENT W/ EACH CATEGORY, IMPORT TOP*/}
       {DESSERTS.map((recipe) => (
-        <DessertRecipe key={recipe.id} link={recipe.id} recipename={recipe.name} src={recipe.thumbnail} />
+        <RecipeCard
+          key={recipe.id}
+          categoryId={categoryId}
+          link={recipe.id}
+          recipename={recipe.name}
+          src={recipe.thumbnail}
+        />
       ))}
     </Grid.Row>
   </Grid>
 )
 
-const DessertPage = () => (
+const CategoryPage = ({ categoryId }) => (
   <Container>
     <Hero />
     <StyledGrid centered>
@@ -103,10 +112,10 @@ const DessertPage = () => (
         <RecipeMenuBar />
       </Grid.Column>
       <Grid.Column width={13}>
-        <GridDessertRecipe />
+        <GridRecipe categoryId={categoryId} />
       </Grid.Column>
     </StyledGrid>
   </Container>
 )
 
-export default DessertPage
+export default CategoryPage

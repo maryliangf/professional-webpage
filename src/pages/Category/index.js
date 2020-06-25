@@ -1,14 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import DessertPage from './Dessert'
+import CategoryPage from './RecipeList'
 
-const CategoryPage = () => {
+const CategoryPages = () => {
   const { category } = useParams()
-  if (category === 'desserts') {
-    return <DessertPage />
-  }
-  return null
+
+  return <CategoryPage categoryId={category} />
 }
 
-export default CategoryPage
+export default CategoryPages
