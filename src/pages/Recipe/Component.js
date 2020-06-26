@@ -27,19 +27,24 @@ const Info = styled.p`
 `
 
 const RecipeComponent = ({ recipe }) => {
+  const getColumns = (length) => {
+    if (length === 3 || length === 5 || length === 6) return 3
+    return 2
+  }
+
   return (
     <>
       <Name>{recipe.name}</Name>
       <Info>{recipe.text}</Info>
-      <Image src={recipe.thumbnail} style={{ width: '100%', maxHeight: '450px', objectFit: 'cover' }} centered />
-      <Grid columns={3} padded>
+      <Image src={recipe.thumbnail} style={{ width: '100%', maxHeight: '650px', objectFit: 'cover' }} centered />
+      <Grid columns={getColumns(recipe.images.length)} padded centered>
         {recipe.images.map((img, i) => (
           <Grid.Column key={i} textAlign="center">
             <Image
               src={img.link}
               size="medium"
               centered
-              style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+              style={{ width: '200px', height: 'auto', objectFit: 'cover' }}
             />
             <p style={{ fontStyle: 'italic' }}>{img.text}</p>
             <br />

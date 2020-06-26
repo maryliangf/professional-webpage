@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Grid, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 
+import RECIPES from '../../../assets/recipes'
 import DESSERTS from '../../../assets/recipes/desserts'
 import Container from '../../../components/Container'
 import RecipeMenuBar from '../../Recipes/MenuBar'
@@ -91,7 +92,10 @@ const GridRecipe = ({ categoryId }) => (
     </Grid.Row>
     <Grid.Row centerd columns={3}>
       {/* TODO: CHANGE DESSERTS TO DYNAMIC ARRAY, MAKE IF THEN STATEMENT W/ EACH CATEGORY, IMPORT TOP*/}
-      {DESSERTS.map((recipe) => (
+      {RECIPES.filter((r) => {
+        if (categoryId === r.category) return true
+        else return false
+      }).map((recipe) => (
         <RecipeCard
           key={recipe.id}
           categoryId={categoryId}
