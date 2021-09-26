@@ -32,6 +32,29 @@ const P = styled.p`
 export const ProjectList = () => (
   <>
     <Project
+      header="Patient Education Handout with Dietetic Intern: Gestational Diabetes"
+      date="April 2021"
+      sections={[
+        {
+          header: 'Project Goals',
+          content: (
+            <P>
+              The goal was to provide our prenatal patients who are diagnosed with gestational diabetes a guide to help
+              them navigate through the gestational diabetes diet and also to develop the dietetic intern&apos;s skills
+              to develop clear, concise nutrition education handouts by providing timely and appropriate feedback on
+              these materials.
+            </P>
+          ),
+        },
+        {
+          header: 'The Result',
+          noContain: true,
+          content: <CarouselComponent size={10} folderName="project3" imageName="PE_" />,
+        },
+      ]}
+    />
+
+    <Project
       header="Diabetes Awareness Campaign at MNHC"
       date="November 2020"
       sections={[
@@ -98,6 +121,7 @@ export const ProjectList = () => (
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    style={{ margin: 'auto' }}
                   />
                 </div>
               ))}
