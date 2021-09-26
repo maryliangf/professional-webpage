@@ -1,36 +1,61 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
+import { Header } from 'semantic-ui-react'
+import styled from 'styled-components'
 
-const ProjectComponent = ({ size, folderName, imageName }) => (
-  <Carousel showIndicators={false}>
-    {imagesArray(size, folderName, imageName).map((item) => {
-      return (
-        <div key={item.id}>
-          <img src={process.env.PUBLIC_URL + item.src} alt={item.id} />
-        </div>
-      )
-    })}
-  </Carousel>
-)
+const SectionHeader = styled(Header)`
+  font-size: 2rem !important;
+  font-weight: normal !important;
+  text-align: center;
+`
 
-type ImageType = {
-  src: string
-  id: string
+const Date = styled.p`
+  text-align: center;
+  font-style: italic;
+`
+
+const SubHeader = styled(Header)`
+  text-transform: uppercase !important;
+  letter-spacing: 0.15rem !important;
+`
+
+const SectionContainer = styled.div`
+  padding: 0 1.5rem;
+`
+
+const Divider = styled.div`
+  border-bottom: 2px solid black;
+  width: 15rem;
+  margin: 6rem auto;
+`
+
+type Section = {
+  header?: React.ReactNode
+  content: React.ReactNode
+  noContain?: boolean
 }
 
-const imagesArray = (size, folderName, imageName) => {
-  const array: ImageType[] = []
-  for (let count = 1; count < size + 1; count++) {
-    const id = padToN(size.toString().length, count)
-    const name = `${imageName}${id}.png`
-    array.push({ src: `/${folderName}/${name}`, id })
-  }
-  return array
+interface Props {
+  header: React.ReactNode
+  date: string
+  sections: Section[]
+  last?: boolean
 }
 
-const padToN = (n: number, number: number) =>
-  number <= 999 ? `${'0'.repeat(n - 1)}${number}`.slice(-n) : number.toString()
+const Project = ({ header, date, sections, last }: Props) => {
+  return (
+    <>
+      <SectionHeader>{header}</SectionHeader>
+      <Date>{date}</Date>
+      {sections.map((section, i) => (
+        <>
+          {section.header && <SubHeader>{section.header}</SubHeader>}
+          {!section.noContain ? <SectionContainer>{section.content}</SectionContainer> : section.content}
+          {i !== sections.length ? <br /> : null}
+        </>
+      ))}
+      {!last && <Divider />}
+    </>
+  )
+}
 
-export default ProjectComponent
+export default Project

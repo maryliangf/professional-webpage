@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Hero from './Hero'
-import { Prone } from './ProjectList'
+import { ProjectList } from './ProjectList'
 
 const Column = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const ProjectsPage = () => (
     <Hero />
     <Column>
       <div style={{ width: '100%', maxWidth: '800px', padding: '0 1rem' }}>
-        <Prone />
+        <ProjectList />
       </div>
     </Column>
   </>
