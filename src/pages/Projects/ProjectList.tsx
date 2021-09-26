@@ -45,6 +45,7 @@ const Divider = styled.div`
   width: 15rem;
   margin: 6rem auto;
 `
+
 const Row = styled.div`
   display: flex;
   justify-content: space-evenly;

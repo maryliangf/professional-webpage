@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import Container from '../../components/Container'
 import Form from './Form'
 import Hero from './Hero'
 import MessageText from './Message'
@@ -19,8 +18,8 @@ const formInitialValues = {
   message: '',
 }
 
-const ContactPage = ({ location }) => {
-  const [state, setState] = useState({
+const ContactPage = () => {
+  const [state, setState] = useState<any>({
     ...formInitialValues,
     success: false,
   })
@@ -28,7 +27,6 @@ const ContactPage = ({ location }) => {
   const handleChange = (e, { name, value }) => setState({ [name]: value })
 
   const onSubmit = () => {
-    // eslint-disable-next-line no-unused-vars
     const { success, ...values } = state
     fetch('https://us-central1-mary-portfolio.cloudfunctions.net/sendMail', {
       method: 'post',
@@ -40,7 +38,7 @@ const ContactPage = ({ location }) => {
   }
 
   return (
-    <Container location={location}>
+    <>
       <Hero />
       <div style={{ margin: '0 3rem' }}>
         <MessageText />
@@ -53,7 +51,7 @@ const ContactPage = ({ location }) => {
           }}
         />
       </div>
-    </Container>
+    </>
   )
 }
 

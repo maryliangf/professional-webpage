@@ -2,7 +2,6 @@ import React from 'react'
 import { Button, Grid, Header } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import Container from '../../components/Container'
 import Hero from './Hero'
 
 const StyledHeader = styled(Header)`
@@ -13,10 +12,10 @@ const StyledHeader = styled(Header)`
 `
 
 const RecipesPage = () => (
-  <Container>
+  <>
     <Hero />
     <GridRecipeCategories />
-  </Container>
+  </>
 )
 
 const RecipeImageWrapper = styled.div`

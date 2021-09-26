@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Grid, Header, Image } from 'semantic-ui-react'
+import { Button, Grid, GridColumnProps, Header, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import ContactPic from '../../assets/contact.jpg'
-import MaryPic from '../../assets/IMG_4980.JPG'
+import MaryPic from '../../assets/IMG_4980.jpg'
 import PeachPic from '../../assets/Peach.jpg'
 
 const StyledHeader = styled(Header)`
@@ -41,7 +41,7 @@ const P = styled.p`
   text-align: center;
 `
 
-const Center = styled.div`
+const Center = styled.div<{ row?: boolean }>`
   height: 100%;
   width: 100%;
   display: flex;
@@ -51,7 +51,7 @@ const Center = styled.div`
   padding: 6rem 0;
 `
 
-const Column = ({ children, row, ...props }) => (
+const Column = ({ children, row, ...props }: { row?: boolean } & GridColumnProps) => (
   <Grid.Column {...props}>
     <Center row={row}>{children}</Center>
   </Grid.Column>

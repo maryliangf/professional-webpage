@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Container from '../../components/Container'
 import Hero from './Hero'
 import { Prone } from './ProjectList'
 
@@ -15,15 +14,15 @@ const Column = styled.div`
   }
 `
 
-const ProjectsPage = ({ location }) => (
-  <Container location={location}>
+const ProjectsPage = () => (
+  <>
     <Hero />
     <Column>
       <div style={{ width: '100%', maxWidth: '800px', padding: '0 1rem' }}>
         <Prone />
       </div>
     </Column>
-  </Container>
+  </>
 )
 
 export default ProjectsPage

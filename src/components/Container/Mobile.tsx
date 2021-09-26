@@ -2,32 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Container, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
-const ROUTES = [
-  {
-    to: '/',
-    label: 'Home',
-  },
-  {
-    to: '/aboutme',
-    label: 'About Me',
-  },
-  {
-    to: '/experience',
-    label: 'Experience',
-  },
-  {
-    to: '/projects',
-    label: 'Projects',
-  },
-  {
-    to: '/recipes',
-    label: 'Recipes',
-  },
-  {
-    to: '/contact',
-    label: 'Contact Me',
-  },
-]
+import { ROUTES } from '../../constants/routes'
 
 const MobileContainer = ({ children }) => {
   const location = useLocation()

@@ -1,19 +1,18 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 
-import ResponsiveContainer from '../../components/Container'
 import Hero from './Heading'
 import { AboutRow, ContactRow, ExperienceRow } from './Rows'
 
-const Home = ({ location }) => (
-  <ResponsiveContainer location={location}>
+const HomePage = () => (
+  <>
     <Hero />
     <Grid container stackable>
       <AboutRow />
       <ExperienceRow />
       <ContactRow />
     </Grid>
-  </ResponsiveContainer>
+  </>
 )
 
-export default Home
+export default HomePage

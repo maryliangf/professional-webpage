@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Grid } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import Container from '../../components/Container'
 import Hero from './Hero'
 import { GoalsRow, MeetRow, WorkRow } from './Rows'
 
@@ -12,7 +11,7 @@ const Divider = styled.div`
   margin: 0 auto;
 `
 
-const AboutPage = ({ location }) => {
+const AboutPage = () => {
   const [, setState] = useState({
     width: window.innerWidth,
   })
@@ -27,7 +26,7 @@ const AboutPage = ({ location }) => {
   }, [])
 
   return (
-    <Container location={location}>
+    <>
       <Hero />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ maxWidth: '1440px', margin: '3rem 4rem' }}>
@@ -40,7 +39,7 @@ const AboutPage = ({ location }) => {
           </Grid>
         </div>
       </div>
-    </Container>
+    </>
   )
 }
 

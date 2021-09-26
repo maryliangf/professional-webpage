@@ -1,8 +1,8 @@
 import React from 'react'
-import { Grid, Header, Image } from 'semantic-ui-react'
+import { Grid, GridColumnProps, Header, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
-import MaryPic from '../../assets/IMG_4980.JPG'
+import MaryPic from '../../assets/IMG_4980.jpg'
 
 const StyledHeader = styled(Header)`
   letter-spacing: 0.3rem !important;
@@ -28,6 +28,15 @@ const P = styled.p`
       : 'left'};
 `
 
+interface CenterProps {
+  row?: boolean
+  justify?: string
+  align?: string
+  padding?: boolean
+  lean?: boolean
+  isMobile?: boolean
+}
+
 const Center = styled.div`
   height: 100%;
   width: 100%;
@@ -39,11 +48,13 @@ const Center = styled.div`
   padding: ${(props) =>
     props.padding && props.lean ? '0 3rem' : props.padding && !props.lean ? '3rem 3rem' : props.lean ? '0' : '3rem 0'};
   @media (max-width: 425px) {
-    padding: ${(props) => props.mobile && '0'};
+    padding: ${(props) => props.isMobile && '0'};
   }
 `
 
-const Column = ({ children, justify, align, row, lean, padding, mobile, ...props }) => (
+interface ColumnProps extends GridColumnProps, CenterProps {}
+
+const Column = ({ children, justify, align, row, lean, padding, mobile, ...props }: ColumnProps) => (
   <Grid.Column {...props}>
     <Center justify={justify} align={align} row={row} lean={lean} padding={padding} mobile={mobile}>
       {children}
@@ -53,7 +64,7 @@ const Column = ({ children, justify, align, row, lean, padding, mobile, ...props
 
 const MeetRow = () => (
   <Grid.Row columns={2}>
-    <Column width={7} justify="start" mobile>
+    <Column width={7} justify="start" isMobile>
       <Image src={MaryPic} rounded size="medium" style={{ width: '300px', height: '300px', objectFit: 'cover' }} />
     </Column>
     <Column justify="start" align="start" width={9}>

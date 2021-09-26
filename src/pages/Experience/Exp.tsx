@@ -31,7 +31,17 @@ const Divider = styled.div`
   width: 15rem;
   margin: 6rem auto;
 `
-const ExpHT = ({ title, subtitle, text, src, noDiv, subheadPadding }) => (
+
+interface Props {
+  title?: React.ReactNode
+  subtitle: React.ReactNode
+  text: React.ReactNode
+  src?: string
+  noDiv?: boolean
+  subheadPadding?: string
+}
+
+const ExpHT = ({ title, subtitle, text, src, noDiv, subheadPadding }: Props) => (
   <>
     {src && <ExpImage src={src} />}
     {title && <ExpHead size="large" content={title} />}

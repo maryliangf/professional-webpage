@@ -2,15 +2,14 @@ import React from 'react'
 import { HashLink as Link } from 'react-router-hash-link'
 import { Grid, Menu, Rail, Ref, Sticky } from 'semantic-ui-react'
 
-import Container from '../../components/Container'
 import ExpList from './ExpList'
 import Hero from './Hero'
 
-const ExperiencePage = ({ location }) => {
-  const contextRef = React.useRef()
+const ExperiencePage = () => {
+  const contextRef = React.createRef<HTMLElement>()
 
   return (
-    <Container location={location}>
+    <>
       <Hero />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div style={{ maxWidth: '1440px', margin: '4rem 2rem' }}>
@@ -52,7 +51,7 @@ const ExperiencePage = ({ location }) => {
           </Grid>
         </div>
       </div>
-    </Container>
+    </>
   )
 }
 

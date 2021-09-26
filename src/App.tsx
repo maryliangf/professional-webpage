@@ -4,25 +4,18 @@ import 'semantic-ui-css/semantic.min.css'
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import Responsive from './components/Container'
 import ScrollToTop from './components/ScrollToTop'
-import AboutPage from './pages/About'
-import ContactPage from './pages/Contact'
-import ExperiencePage from './pages/Experience'
-import HomePage from './pages/Home'
-import ProjectsPage from './pages/Projects'
-import RecipesPage from './pages/Recipes'
-// import ResumePage from './pages/Resume'
+import { ROUTES } from './constants/routes'
 
 const App = () => (
   <Router>
     <ScrollToTop>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/aboutme" component={AboutPage} />
-      <Route exact path="/experience" component={ExperiencePage} />
-      <Route exact path="/projects" component={ProjectsPage} />
-      {/* <Route exact path="/resume" component={ResumePage} /> */}
-      <Route exact path="/recipes" component={RecipesPage} />
-      <Route exact path="/contact" component={ContactPage} />
+      <Responsive>
+        {ROUTES.map((route, i) => (
+          <Route key={i} exact path={route.to} component={route.component} />
+        ))}
+      </Responsive>
     </ScrollToTop>
   </Router>
 )
