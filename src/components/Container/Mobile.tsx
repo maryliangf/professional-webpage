@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Container, Icon, Menu, Responsive, Segment, Sidebar } from 'semantic-ui-react'
-
-import { getWidth } from './index'
+import { Container, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
 
 const ROUTES = [
   {
@@ -21,10 +19,6 @@ const ROUTES = [
     to: '/projects',
     label: 'Projects',
   },
-  // {
-  //   to: '/resume',
-  //   label: 'Resume',
-  // },
   {
     to: '/recipes',
     label: 'Recipes',
@@ -45,7 +39,7 @@ const MobileContainer = ({ children }) => {
   const handleToggle = () => setSidebarOpen(true)
 
   return (
-    <Responsive as={Sidebar.Pushable} getWidth={getWidth} maxWidth={Responsive.onlyMobile.maxWidth}>
+    <>
       <Sidebar as={Menu} animation="push" inverted onHide={handleSidebarHide} vertical visible={sidebarOpen}>
         {ROUTES.map((route, index) => (
           <Menu.Item key={index} active={location.pathname === route.to}>
@@ -67,7 +61,7 @@ const MobileContainer = ({ children }) => {
         </Segment>
         {children}
       </Sidebar.Pusher>
-    </Responsive>
+    </>
   )
 }
 

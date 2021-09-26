@@ -118,4 +118,4 @@ const ContactRow = () => (
   </Grid.Row>
 )
 
-export { AboutRow, ExperienceRow, ContactRow }
+export { AboutRow, ContactRow, ExperienceRow }

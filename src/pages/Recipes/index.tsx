@@ -12,8 +12,8 @@ const StyledHeader = styled(Header)`
   text-align: center;
 `
 
-const RecipesPage = ({ location }) => (
-  <Container location={location}>
+const RecipesPage = () => (
+  <Container>
     <Hero />
     <GridRecipeCategories />
   </Container>

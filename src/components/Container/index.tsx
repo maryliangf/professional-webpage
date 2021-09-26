@@ -21,8 +21,7 @@ const ResponsiveContainer = ({ children }) => (
 export default ResponsiveContainer
 
 export const getWidth = () => {
-  const isSSR = typeof window === 'undefined'
-  return isSSR ? ResponsiveContainer.onlyTablet.minWidth : window.innerWidth
+  return window.innerWidth
 }
 
 const StyledButton = styled(Button)`

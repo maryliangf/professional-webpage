@@ -141,4 +141,4 @@ const GoalsRow = () => (
   </Grid.Row>
 )
 
-export { MeetRow, WorkRow, GoalsRow }
+export { GoalsRow, MeetRow, WorkRow }
