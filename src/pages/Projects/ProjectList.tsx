@@ -1,4 +1,5 @@
 import React from 'react'
+import { Carousel } from 'react-responsive-carousel'
 import { Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
@@ -6,8 +7,10 @@ import MEP1 from '../../assets/MEP1.png'
 import MEP2 from '../../assets/MEP2.png'
 import TMP1 from '../../assets/TMP1.jpg'
 import TMP2 from '../../assets/TMP2.jpg'
-import Carousel from './Carousel'
+import CarouselComponent from './Carousel'
 import Project from './Project'
+
+const YOUTUBE_IDS = ['XfOMnTueRcI', 'ygqe3O8xHHw', 'BiAvtzHZIKM', 'zBsh998BE4o', 'kV4urLTis0U']
 
 const Row = styled.div`
   display: flex;
@@ -28,6 +31,93 @@ const P = styled.p`
 
 export const ProjectList = () => (
   <>
+    <Project
+      header="Diabetes Awareness Campaign at MNHC"
+      date="November 2020"
+      sections={[
+        {
+          header: 'Project Goals',
+          content: (
+            <P>
+              The goal was to create a virtual campaign to raise awareness to our patients at our clinic about diabetes
+              as a healthcare team.
+            </P>
+          ),
+        },
+        {
+          header: 'The Process',
+          noContain: true,
+          content: (
+            <ol>
+              <li>
+                <P>Select an innovative way to present the information about diabetes to tour patients.</P>
+              </li>
+              <li>
+                <P>Request quotes from different videographers and select the one that suits our needs the best.</P>
+              </li>
+              <li>
+                <P>
+                  Brainstorm topics that we want to cover and reach out to clinic staff (a provider and a nurse) in our
+                  clinic to join us for the video series.
+                </P>
+              </li>
+              <li>
+                <P>Write script for our videos and translate all of them to Spanish.</P>
+              </li>
+              <li>
+                <P>Shoot series of short videos with a provider, a nurse, and dietitians, as well as B-rolls.</P>
+              </li>
+              <li>
+                <P>
+                  Post videos on the clinic&apos;s social media through the span of several weeks and encourage
+                  engagement by setting up giveaways with diabetes-related goodies.
+                </P>
+              </li>
+            </ol>
+          ),
+        },
+        {
+          header: 'The Result',
+          noContain: true,
+          content: (
+            <Carousel
+              showIndicators={false}
+              renderThumbs={(items) =>
+                items.map((_, i) => (
+                  <img key={i} src={`http://i3.ytimg.com/vi/${YOUTUBE_IDS[i]}/hqdefault.jpg`} alt="" />
+                ))
+              }
+            >
+              {YOUTUBE_IDS.map((link, i) => (
+                <div key={i}>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${link}`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ))}
+            </Carousel>
+          ),
+        },
+        {
+          header: 'Final Thoughts',
+          content: (
+            <P>
+              My case study presentation was <i>one of the most memorable parts of my dietetic internship</i>. It is the
+              representation of the zenith of the clinical knowledge and judgment I was developing throughout my
+              internship rotations. This was supported by innumerable hours of research of evidence-based practice, as
+              well as the integration and cooperation of the healthcare team to carry out patient-centered care.
+            </P>
+          ),
+        },
+      ]}
+    />
+
     <Project
       header={
         <>
@@ -92,7 +182,7 @@ export const ProjectList = () => (
           header: 'The Result',
           noContain: true,
           content: (
-            <Carousel
+            <CarouselComponent
               size={101}
               folderName="project0"
               imageName="EN Management during Prone Ventilation_Presentation.Mary Liang-"
@@ -296,7 +386,7 @@ export const ProjectList = () => (
         {
           header: 'The Result',
           noContain: true,
-          content: <Carousel size={12} folderName="project2" imageName="Theme Meal Presentation-" />,
+          content: <CarouselComponent size={12} folderName="project2" imageName="Theme Meal Presentation-" />,
         },
         {
           header: 'Final Thoughts',
@@ -366,7 +456,7 @@ export const ProjectList = () => (
         {
           header: 'The Result',
           noContain: true,
-          content: <Carousel size={9} folderName="project1" imageName="Business Plan Presentation-" />,
+          content: <CarouselComponent size={9} folderName="project1" imageName="Business Plan Presentation-" />,
         },
         {
           header: 'Final Thoughts',
